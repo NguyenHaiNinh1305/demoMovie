@@ -1,0 +1,261 @@
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+}
+
+header {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+}
+
+#cinema-logo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image-logo {
+    width: 160px;
+    height: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+#pro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+}
+
+#content {
+    margin: 0 auto;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#list {
+    margin: 30px 60px;
+    display: flex;
+}
+
+#menu {
+    width: 70%;
+}
+
+#order-snack {
+    width: 30%;
+}
+
+.guide {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.poster:hover {
+    animation: shake 1.2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.poster {
+    height: 230px;
+    width: 230px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+button.select-snack {
+    width: fit-content;
+    margin: 0 auto;
+    border: 1px solid #C21409;
+    background-color: white;
+    color: #C21409;
+    border-radius: 45px;
+    padding: 8px;
+    display: inline;
+    cursor: pointer;
+}
+
+button.select-snack:hover {
+    background-color: #971007;
+    color: white;
+}
+
+.snack-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.poster-mini {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-quantity,
+.btn-delete {
+    color: #C21409;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.detail-info {
+    margin: 0 10px;
+}
+
+.detail-info>p,
+.number {
+    margin: 0;
+}
+
+.snack-unit-price,
+.number {
+    font-size: 16px;
+}
+
+#btn-container {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+}
+
+#cancel-btn-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#next-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+#next-button,
+#cancel-button {
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    padding: 15px 40px;
+    margin: 10px;
+    display: inline;
+    cursor: pointer;
+}
+
+#next-button {
+    background-color: #C21409;
+}
+
+#next-button:hover {
+    background-color: #971007;
+}
+
+#cancel-button {
+    border: 1px solid #C21409;
+    background-color: white;
+    color: #C21409;
+}
+
+#cancel-button:hover {
+    background-color: #971007;
+    color: white;
+}
+
+.beforeselect {
+    height: 700px;
+    width: fit-content;
+}
+
+.beforeselect:hover {
+    transform: scaleY(1.01);
+}

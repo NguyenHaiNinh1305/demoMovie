@@ -1,0 +1,110 @@
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+}
+/* ------------------------------------------header---------------------------------------- */
+header {
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+}
+
+#cinema-logo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image-logo {
+    width: 160px;
+    height: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+#pro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+    border: none;
+}
+/* --------------------------------------------content ------------------------------------------*/
+div#content{
+    margin: 20px 0px;
+}
+div#article{
+    text-align: center;
+}
+#article h1{ 
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+}
+div#edit-part{
+    display: flex;
+    justify-content: center;
+}
+#title{
+    margin: 0px 200px;
+}
+div#image-part{
+    margin: 0px 25px;
+}
+div#form-part{
+    margin: 0px 25px;
+}
+form label{
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+}
+input{
+    background: #FFFFFF;
+    border: 1.5px solid #C21409;
+    border-radius: 100px;
+    flex-grow: 1;
+    margin: 15px 0px;
+    padding: 10px;
+}
+/* ----------------------------------------------footer------------------------------------------ */
+footer{
+    margin: 0px 150px ;
+    display: flex;
+    justify-content: space-between;
+}
+footer>button{
+    font-size: 20px;
+    border-radius: 100px;
+    padding: 15px 40px;
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+}
+button#cancel{
+    background: #FFFFFF;
+    color: #C21409;
+    border: 1.5px solid #C21409;
+}
+button#done{
+    background: #C21409;
+    color: #FFFFFF ;
+    border: 1.5px solid #C21409;
+}
+button#cancel:hover, button#done:hover{
+    background-color: #971007;
+    color: #FFFFFF ;
+}

@@ -1,0 +1,119 @@
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+}
+
+header {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+}
+
+#cinema-logo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image-logo {
+    width: 160px;
+    height: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+#pro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+}
+
+#content {
+    margin: 0 auto;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#list {
+    margin: 30px 60px;
+}
+
+.detail {
+    width: 650px;
+    margin: 0 auto;
+}
+
+.detail {
+    font-size: 20px;
+}
+
+.detail-info {
+    font-weight: bold;
+}
+
+button {
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    padding: 15px 40px;
+    margin: 10px;
+    display: inline;
+    cursor: pointer;
+}
+
+.inline {
+    display: inline;
+}
+
+.price {
+    text-align: end;
+}
+
+
+#return-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#cancel-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#return-button {
+    background-color: #C21409;
+    margin-top: 50px;
+}
+
+#return-button:hover {
+    background-color: #971007;
+}
+
+#cancel-button {
+    border: 1px solid #C21409;
+    color: #C21409;
+    background-color: white;
+    margin-top: 50px;
+}
+
+#cancel-button:hover {
+    background-color: #971007;
+    color: white;
+}

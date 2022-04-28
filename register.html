@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Register account</title>
+</head>
+
+<body>
+    <header>
+        <div id="cinema-logo">
+            <img id="image-logo" src="images/cgv_logo.jpg" />
+        </div>
+        <!-- <div id="profile">
+            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+        </div> -->
+    </header>
+    <div id="content">
+        <div id="article">
+            <h1>Register account</h1><br>
+        </div>
+        <div id="edit-part">
+            <form action="">
+                <label for="name">User name</label>
+                <input type="text" id="name" size="100" placeholder="Username"><br>
+                <label for="email">Email</label>
+                <input type="email" id="email" size="100" placeholder="Email" pattern='okbb'><br>
+                <label for="age">age</label>
+                <input type="age" id="age" size="100"><br>
+                <label for="password">Password</label>
+                <input type="password" id="newpassword" size="100"><br>
+                <label for="password">Confirm Password</label>
+                <input type="password" id="password" size="100"><br>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <button id="cancel">Cancel</button>
+        <button id="done">Done</button>
+    </footer>
+</body>
+
+<script>
+
+    $("#done").click(function () {
+
+        registerAccount()
+
+
+    })
+
+
+
+    function registerAccount() {
+        var accname = document.getElementById('name').value
+        var email = document.getElementById('email').value
+        var age = document.getElementById('age').value
+        var newpassword = document.getElementById('newpassword').value
+        var confirmpass = document.getElementById('password').value
+        var formreg = {
+            accountName: accname,
+            email: email,
+            password: newpassword,
+            age: age
+        }
+        if (18 <= age <= 65) {
+            if (newpassword == confirmpass) {
+                $.ajax({
+                    url: 'http://localhost:8080/login/signup',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: JSON.stringify(formreg),
+                    contentType: "application/json",
+                    success: function () {
+
+
+                    },
+                    error() {
+
+                        alert('Create account successfully')
+                        window.location.replace("http://127.0.0.1:5500/admin-login.html")
+                    }
+                });
+            } else {
+                alert('Password does not match')
+            }
+
+        } else {
+            alert('Age must be greater than 18 and less then 65 or equal')
+        }
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/choose_film_detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Choose film</title>
+</head>
+
+<body>
+    <header>
+        <div id="cinema-logo">
+            <img id="image-logo" src="images/cgv_logo.jpg">
+        </div>
+        <div id="profile">
+            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+        </div>
+    </header>
+    <div class="content-part">
+        <div class="name-title-page">
+            <h1>Create order</h1>
+        </div>
+        <div class="detail-part">
+            <!-- <div class="img-part">
+                <img src="images/film.jpg" alt="" id="img-film">
+            </div>
+            <div class="info-film">
+                <p class="name-movie">Neon Genesis Evangelion 3.0 + 1.0: Thrice
+                    upon a time</p>
+                <p class="text-style font-w-600">Director: <span class="text-style font-w-400">Hideaki Anno</span></p>
+                <p class="text-style font-w-600">Cast: <span class="text-style font-w-400">Megumi Ogata, Yuko Miyamura,
+                        Megumi Hayashibara</span></p>
+                <p class="text-style font-w-600">Genre: <span class="text-style font-w-400">Mecha, Psychological,
+                        Drama</span></p>
+                <p class="text-style font-w-600">Release date: <span class="text-style font-w-400">March 10, 2022</span>
+                </p>
+                <p class="text-style font-w-600">Running time: <span class="text-style font-w-400">155 minutes</span>
+                </p>
+                <p class="text-style font-w-600">Language: <span class="text-style font-w-400">Japanese with English
+                        subtitles</span></p>
+                <p class="text-style font-w-600">Rated: <span class="text-style font-w-400">PG-13</span></p>
+            </div> -->
+        </div>
+        <div class="date-part">
+            <div class="col-date-title">
+                <h2>Date</h2>
+            </div>
+            <div class="col-date-detail" onclick="chooseday()">
+                <button class="box-date box-date-out-of-date">
+                    <p>15 Mar</p>
+                    <p>TUE</p>
+                </button>
+                <div class="box-date box-date-selected">
+                    <p>15 Mar</p>
+                    <p>TUE</p>
+                </div>
+                <div class="box-date">
+                    <p>15 Mar</p>
+                    <p>TUE</p>
+                </div>
+                <div class="box-date">
+                    <p>15 Mar</p>
+                    <p>TUE</p>
+                </div>
+                <div class="box-date">
+                    <p>15 Mar</p>
+                    <p>TUE</p>
+                </div>
+            </div>
+        </div>
+        <div class="time-part">
+            <div class="col-time-title">
+                <h2>Time</h2>
+            </div>
+            <div class="col-detail-time-seat-price">
+                <div col="col-seat-type">
+                    <h3 class="seat-type-style">REGULAR 2D</h3>
+                    <div class="row-time-movie" onclick="choosetimefor2d()">
+                        <div class="box-time box-time-out-of-date">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                    </div>
+                </div>
+                <div class="col-price">
+                    <p>70000 VND</p>
+                </div>
+                <div col="col-seat-type">
+                    <h3 class="seat-type-style">GOLD CLASS 2D</h3>
+                    <div class="row-time-movie" onclick="choosetimefor3d()">
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                        <div class="box-time">
+                            12:15
+                        </div>
+                    </div>
+                </div>
+                <div class="col-price">
+                    <p>100000 VND</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <button id="cancel">Cancel</button>
+        <button id="done" onclick="nextToStep()">Next</button>
+    </footer>
+</body>
+<script>
+    $('#cancel').click(function () {
+        window.location.replace("staff_create_order_choose_film.html")
+
+    })
+</script>
+<script src="js\createOrder.js"></script>
+<script src="js\login.js"></script>
+
+</html>

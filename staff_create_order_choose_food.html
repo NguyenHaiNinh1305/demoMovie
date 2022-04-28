@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/staff_create_order_choose_food.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugin\fontawesome\css\all.min.css">
+    <link rel="stylesheet" href="plugin\fontawesome-free-6.1.1-web\css\all.min.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Ticket managing system</title>
+</head>
+
+<body>
+    <header>
+        <div id="cinema-logo">
+            <img id="image-logo" src="../images/cgv_logo.jpg" />
+        </div>
+        <div id="profile">
+            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+        </div>
+    </header>
+    <div id="content">
+        <article id="title">
+            <h1>Create order</h1>
+        </article>
+        <section id="list">
+            <div id="menu">
+                <p class="guide">Choose popcorn</p>
+                <div class="category" id="popcorn">
+                    <!-- <div class="card">
+                        <img class="poster" src="/images/popcorn.jpg" />
+                        <p class="snack-name">Popcorn</p>
+                        <button class="select-snack" value="popcorn">Select</button>
+                    </div>
+                    <div class="card">
+                        <img class="poster" src="/images/choco_popcorn.jpg" />
+                        <p class="snack-name">Chocolate Popcorn</p>
+                        <button class="select-snack" value="chocolate-popcorn">Select</button>
+                    </div>
+                    <div class="card">
+                        <img class="poster" src="/images/caramel_popcorn.jpg" />
+                        <p class="snack-name">Caramel Popcorn</p>
+                        <button class="select-snack" value="caramel-popcorn">Select</button>
+                    </div> -->
+                </div>
+                <p class="guide">Choose drink</p>
+                <div class="category" id="drink">
+                    <!-- <div class="card">
+                        <img class="poster" src="/images/coca.jpg" />
+                        <p class="snack-name">Coca cola</p>
+                        <button class="select-snack" value="coca">Select</button>
+                    </div>
+                    <div class="card">
+                        <img class="poster" src="/images/pepsi.jpg" />
+                        <p class="snack-name">Pepsi</p>
+                        <button class="select-snack" value="pepsi">Select</button>
+                    </div> -->
+                </div>
+            </div>
+
+            <div id="order-snack">
+
+                <div id="snack-selected-container">
+                    <p>Please choose food to make the movie more interesting</p>
+                    <img class="beforeselect" src="../images/PinClipart.com_hardworking-clipart_5365585.png">
+
+                    <!-- <p class="guide">Selected</p>
+                    <div class="snack-detail">
+                        <img class="poster-mini" src="/images/popcorn.jpg" />
+                        <div class="detail-info">
+                            <p class="snack-name">Popcorn</p>
+                            <p class="snack-unit-price">25.000 VND</p>
+                            <div class="quantity">
+                                <button class="btn-quantity" value="minus"><i
+                                        class="fa-solid fa-circle-minus"></i></button>
+                                <p class="number">02</p>
+                                <button class="btn-quantity" value="plus"><i
+                                        class="fa-solid fa-circle-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn-delete" value="popcorn"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                    <div class="snack-detail">
+                        <img class="poster-mini" src="/images/coca.jpg" />
+                        <div class="detail-info">
+                            <p class="snack-name">Coca cola</p>
+                            <p class="snack-unit-price">10.000 VND</p>
+                            <div class="quantity">
+                                <button class="btn-quantity" value="minus"><i
+                                        class="fa-light fa-circle-minus"></i></button>
+                                <p class="number">02</p>
+                                <button class="btn-quantity" value="plus"><i
+                                        class="fa-light fa-circle-plus"></i></button>
+                            </div>
+                        </div>
+                        <button class="btn-delete" value="coca"><i class="fa-regular fa-trash-can"></i></button>
+                    </div> -->
+                </div>
+            </div>
+
+
+        </section>
+        <div id="btn-container">
+            <div id="cancel-btn-container">
+                <button id="cancel-button" onclick="clickto('a',2,3)">Cancel</button>
+            </div>
+            <div id="next-btn-container">
+                <button id="next-button">Next</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    $("#cancel-button").click(function () {
+        window.location.replace("staff_create_order_choose_seat.html")
+
+
+    })
+</script>
+<script src="js\createOrder.js"></script>
+<script src="js\orderfinish.js"></script>
+<script src="js\returnbill.js"></script>
+<script src="js\login.js"></script>
+
+
+</html>

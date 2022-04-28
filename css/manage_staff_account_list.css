@@ -1,0 +1,146 @@
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+}
+
+header {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+}
+
+#cinema-logo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image-logo {
+    width: 160px;
+    height: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+#pro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+}
+
+#content {
+    margin: 0 auto;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#list {
+    margin: 30px 60px;
+}
+
+.guide {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td {
+    border: 1px solid #666666;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+th {
+    background-color: #C21409;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 10px;
+}
+
+button {   
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 45px;
+    padding: 15px 40px;
+    margin: 10px;
+    display: inline;
+    cursor: pointer;
+}
+
+#add-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#add-button {
+    background-color: #C21409;
+    margin-top: 50px;
+}
+
+#add-button:hover {
+    background-color: #971007;
+}
+
+#cancel-button {
+    border: 1px solid #C21409;
+    color: #C21409;
+    margin-top: 20px;
+}
+
+#cancel-button:hover {
+    background-color: #971007;
+    color: white;
+}
+
+.view, .edit, .delete {
+    padding: 15px 20px;
+    margin: 5px;
+}
+
+.view {
+    background-color: #DF720D;
+}
+
+.view:hover {
+    background-color: #9e5008;
+}
+
+.edit {
+    background-color: #E3C10E;
+}
+
+.edit:hover {
+    background-color: #D49B06;
+}
+
+.delete {
+    background-color: #AA0000;
+}
+
+.delete:hover {
+    background-color: #630000;
+}

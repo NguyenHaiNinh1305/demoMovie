@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(0deg, rgba(186, 186, 186, 0.29), rgba(186, 186, 186, 0.29)), url("../images/start_screen_img.png");
+    background-repeat:no-repeat;
+    background-size:100% 100vh;
+    background-attachment: fixed;
+}
+#wrapper{
+    width: 80%;
+    
+}
+#wrap-content{
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    display: flex;
+}
+div#intro{
+    padding-left: 100px;
+    flex-basis: 50%;
+}
+.welcome-line{
+    text-align: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 68px;
+    line-height: 0px;
+    color: #FFFFFF;
+}
+.guide-line{
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+div#login-part{
+    flex-basis: 50%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    display: flex;
+    align-content: space-around;
+}
+label{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+#btn-lg-admin{
+    width: 480px;
+    display: flex;
+    justify-content: space-around;
+}
+#btn-lg-staff{
+    width: 480px;     
+    display: flex;
+    justify-content: space-around;
+}
+.style-btn{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+    background: #C21409;
+    color: white;
+    border-radius: 100px;
+    border: 0px;
+    padding: 15px 80px;
+}
+

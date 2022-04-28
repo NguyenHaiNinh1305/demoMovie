@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/admin-manage-movie-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="cinema-logo">
+            <img id="image-logo" src="../images/cgv_logo.jpg" />
+        </div>
+        <div id="profile">
+            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+        </div>
+        <div id="title-part">
+            <h1 onclick="okbabe()">Mange movie</h1>
+        </div>
+    </div>
+    <div id="wrapper-content">
+        <!-- <div id="img-part">
+            <img src="images/phim.jpg" alt="Neon genesis">
+        </div>
+        <div id="detail-movie">
+            <p id="name-movie">Neon Genesis Evangelion 3.0 + 1.0: Thrice
+                upon a time</p>
+            <p>Director: <span id="director">Hideaki Anno</span></p>
+            <p>Cast: <span id="cast">Megumi Ogata, Yuko Miyamura, Megumi Hayashibara</span></p>
+            <p>Genre: <span id="genre">Mecha, Psychological, Drama</span></p>
+            <p>Running time: <span id="time">155 minutes</span></p>
+            <p>Language: <span id="langue">Japanese with English subtitles</span></p>
+            <p>Rated: <span id="rate">PG-13</span></p>
+            <p>Duration: <span id="duration">10/3/2022 - 30/3/2022</span></p>
+            <div>
+                <p>Seat: </p>
+                <div id="seat-table">
+                    <table>
+                        <tr>
+                            <th>Seats type</th>
+                            <th>Time</th>
+                            <th>Time</th>
+                            <th>Time</th>
+                            <th>Time</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>Regular 2D</td>
+                            <td>12:15</td>
+                            <td>13:45</td>
+                            <td>14:50</td>
+                            <td>17:10</td>
+                            <td>70.000 VND</td>
+                        </tr>
+                        <tr>
+                            <td>Gold class 2D</td>
+                            <td>12:15</td>
+                            <td>13:45</td>
+                            <td>14:50</td>
+                            <td>17:10</td>
+                            <td>70.000 VND</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div id="footer">
+        <button id="cancel">Cancel</button>
+        <button id="edit">Edit</button>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+            $("i").click(function () {
+                $("#function").stop().slideToggle(5000);
+            });
+            $("#edit").click(function () {
+                window.location.replace("admin-manage-movie-edit.html");
+            });
+            $("#cancel").click(function () {
+                window.location.replace("admin_manage_movie_list.html");
+            });
+        });
+
+
+    </script>
+    <script src="js\login.js"></script>
+
+    <body

@@ -1,0 +1,92 @@
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+}
+
+header {
+    margin: 20px;
+    padding: 15px;
+    display: flex;
+}
+
+#cinema-logo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image-logo {
+    width: 160px;
+    height: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+#pro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+}
+
+#content {
+    margin: 0 auto;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#list {
+    margin: 30px 60px;
+}
+
+.guide {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.card {
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+}
+
+/* .card:nth-child(3n) {
+    page-break-after: always;
+    break-after: always;
+} */
+
+.poster {
+    height: 440px;
+    object-fit: cover;
+    border-radius: 8px;
+
+}
+
+.film-title {
+    text-align: center;
+    font-size: 20px;
+}

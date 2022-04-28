@@ -1,0 +1,206 @@
+
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+}
+
+header {
+    margin: 10px 20px;
+    padding: 15px;
+    display: flex;
+}
+
+#cinema-logo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#image-logo {
+    width: 160px;
+    height: auto;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+#pro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+}
+/* --------------------------------------------body---------------------------------------------------------- */
+.content-part{
+    max-width: 960px;
+    margin: 0px auto;
+}
+.name-title-page{
+    text-align: center;
+}
+div.detail-part{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+div.img-part{
+    margin-right: 35px;
+}
+#img-film{
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 20px;
+}
+.info-film{
+    margin: 0px 0px 0px 35px;
+}
+.name-movie{
+    margin: 0px;
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+}
+/* style-text */
+.font-w-600{
+    font-weight: 600;
+}
+.font-w-400{
+    font-weight: 400;
+}
+.text-style{
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 20px
+}
+/* date */
+.date-part{
+    display: flex;
+    justify-content: start;
+}
+.col-date-title{
+    min-width: 400px;
+}
+.col-date-detail{
+    margin: 25px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.box-date{
+    text-align: center;
+    border: 1px solid #5A637A;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 10px;
+    margin: 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 8px;
+    box-sizing: border-box;
+}
+.box-date-out-of-date{
+    background: #DADFE8;
+    color: #9DA8BE;
+    border: none;
+}
+.box-date-selected{
+    background: #D62020;
+    border: none;
+    color: #FFFFFF;
+}
+/* time */
+.time-part{
+    display: flex;
+    justify-content: flex-start;
+}
+.col-detail-time-seat-price{
+    margin-left: 35px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.col-time-title{
+    min-width: 400px;
+}
+.row-time-movie{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.box-time{
+    box-sizing: border-box;
+    min-height: 20px;
+    min-width:  40px;
+    text-align: center;
+    border: 1px solid #5A637A;
+    margin: 10px 10px 10px 0px;
+    font-size: 16px;
+    padding: 5px ;
+    border-radius: 8px;
+}
+.box-time-out-of-date{
+    background: #DADFE8;
+    color: #9DA8BE;
+    border: none;
+}
+.col-price{
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
+.seat-type-style{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    color: #5A637A;
+}
+/*-------------------------------- footer ---------------------------*/
+footer{
+    margin: 100px 150px ;
+    display: flex;
+    justify-content: space-between;
+}
+footer>button{
+    font-size: 20px;
+    border-radius: 100px;
+    padding: 15px 40px;
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0px 50px;
+}
+button#cancel{
+    background: #FFFFFF;
+    color: #C21409;
+    border: 1.5px solid #C21409;
+}
+button#done{
+    background: #C21409;
+    color: #FFFFFF ;
+    border: 1.5px solid #C21409;
+}
+button#cancel:hover, button#done:hover{
+    background-color: #971007;
+    color: #FFFFFF ;
+}
+
+

@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+}
+/*---------------header------------------------------ */
+#header{
+    display: flex;
+    margin: 20px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+#cinema-logo{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#image-logo{
+    width: 160px;
+    height: auto;
+}
+#profile{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#btn-prof{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #D49B06;
+    padding: 30px;
+    border: none;
+    color: #fff;
+}
+div#title-part{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+}
+/*---------------body------------------------------ */
+div#wrapper-content{
+    display: flex;
+    margin: 50px;
+}
+div#img-part{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+div#img-part>img {
+    max-width: 280px;
+    height: 400px;
+    border-radius: 20px;
+    flex-shrink: 2;
+}
+div#detail-movie {
+    width: 60%;
+    margin-left: 20px;
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 600;
+    color: #000000;
+}
+div#detail-movie>p#name-movie{
+    font-size: 24px;  
+}
+div#detail-movie p{
+    font-size: 18px;
+}
+p>span{
+    font-weight: 400;
+    font-size: 18px;
+}
+div#seat-table{
+    display: flex;
+    justify-content: flex-start;
+}
+table, tr, th, td{
+    border: 1px solid #333;
+    padding: 10px;
+    font-family: 'Inter';
+    font-style: normal; 
+    color: #333333; 
+}
+td{
+    
+    font-weight: 400; 
+}
+tr>th{
+    background: #EEEEEE;
+    font-weight: 500; 
+}
+/*---------------footer------------------------------ */
+div#footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; 
+}
+div#footer>button{
+    font-size: 20px;
+    border-radius: 100px;
+    padding: 15px 40px;
+    margin: 40px;
+    font-family: 'Be Vietnam Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+}
+button#cancel{
+    background: #FFFFFF;
+    color: #C21409;
+    border: 1.5px solid #C21409;
+}
+button#edit{
+    background: #C21409;
+    color: #FFFFFF ;
+    border: 1.5px solid #C21409;
+}
+button#cancel:hover, button#edit:hover{
+    background-color: #971007;
+    color: #FFFFFF ;
+}
+
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-manage-movie-list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Ticket managing system</title>
+</head>
+
+<body>
+    <header>
+        <div id="cinema-logo">
+            <img id="image-logo" src="../images/cgv_logo.jpg" />
+        </div>
+        <div id="profile">
+            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+        </div>
+    </header>
+    <div id="content">
+        <article id="title">
+            <h1>Manage movie</h1>
+        </article>
+        <section id="list">
+            <p class="guide">Movie list</p>
+            <div id="table-container">
+                <table id="mytable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Movie</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="onpressofabutton">
+
+                        <!-- <tr>
+                        <td>1</td>
+                        <td>Spider-man: No way home</td>
+                        <td>
+                            <button class="view">View</button>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Neon genesis evangelion 3.0 + 1.0: Thrice upon a time</td>
+                        <td>
+                            <button class="view">View</button>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Hitman's wife's bodyguard</td>
+                        <td>
+                            <button class="view">View</button>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Joker</td>
+                        <td>
+                            <button class="view">View</button>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Cau vang</td>
+                        <td>
+                            <button class="view">View</button>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr> -->
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="pagination">
+                        <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                    </ul>
+                </nav>
+            </div>
+            <div id="add-btn-container">
+                <button id="add-button"><i class="fa-regular fa-plus"></i> Add</button>
+            </div>
+            <button id="cancel-button">Cancel</button>
+        </section>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".view").click(function () {
+                window.location.replace("admin-manage-movie-detail.html");
+            });
+            $(".edit").click(function () {
+                window.location.replace("admin-manage-movie-edit.html");
+            });
+            $("#cancel-button").click(function () {
+                window.location.replace("admin_homepage.html");
+            });
+        });
+
+    </script>
+
+
+</body>
+<script src="../js/movieLists.js"></script>
+<script src="js\login.js"></script>
+
+</html>
