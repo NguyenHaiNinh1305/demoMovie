@@ -1,31 +1,61 @@
 body {
     font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
     font-size: 24px;
-}
-header {
-    margin: 20px;
-    padding: 15px;
-    display: flex;
+    margin: 0;
 }
 
-#cinema-logo {
-    width: 50%;
+header {
+    padding: 15px;
     display: flex;
+    background-color: #C21409;
+    height: 80px;
+    margin: 0;
+
+}
+
+#logo-and-navbar {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
+
+ul#navbar {
+    font-size: 18px;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+li.nav-item a {
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+}
+
+li.nav-item a:hover {
+    background-color: white;
+    color: #630000;
 }
 
 #image-logo {
     width: 160px;
     height: auto;
 }
+
 #profile {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 10%;
 }
-#pro-text {
+
+#btn-prof {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,11 +65,15 @@ header {
     border-radius: 100%;
     background-color: #D49B06;
     padding: 30px;
+    color: white;
+    border: none;
 }
+
 #content {
     margin: 0 auto;
     text-align: center;
 }
+
 #title {
     font-size: 32px;
     font-weight: bold;

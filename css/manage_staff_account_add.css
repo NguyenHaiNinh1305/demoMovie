@@ -1,19 +1,43 @@
 body {
     font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
     font-size: 24px;
+    margin: 0;
 }
 /* ------------------------------------------header---------------------------------------- */
 header {
-    margin: 20px;
     padding: 15px;
     display: flex;
+    background-color: #C21409;
+    height: 80px;
 }
 
-#cinema-logo {
-    width: 50%;
+#logo-and-navbar {
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+ul#navbar {
+    font-size: 18px;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+li.nav-item>a {
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+}
+
+li.nav-item>a:hover {
+    background-color: white;
+    color: #630000;
 }
 
 #image-logo {
@@ -25,9 +49,11 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 10%;
+    margin: 0;
 }
-#pro-text {
+
+#btn-prof {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,6 +63,7 @@ header {
     border-radius: 100%;
     background-color: #D49B06;
     padding: 30px;
+    color: white;
     border: none;
 }
 /* --------------------------------------------content ------------------------------------------*/
@@ -59,33 +86,32 @@ div#add-part{
 div#title{
     margin: 0px 100px;
 }
-form label{
-    font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-}
-input{
+input {
     background: #FFFFFF;
     border: 1.5px solid #C21409;
     border-radius: 100px;
-    flex-grow: 1;
-    margin: 15px 0px;
-    padding: 10px;
+    padding-left: 20px;
+    flex-shrink: 2;
+    height: 30px;
 }
-#role{
-    background: #FFFFFF;
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    padding: 0px 20px;
     border: 1.5px solid #C21409;
     border-radius: 100px;
-    flex-grow: 1;
-    padding: 5px;
-    width: 90%;
-}
-select{
-    font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
+    height: 40px;
 }
 /* ----------------------------------------------footer------------------------------------------ */
 footer{

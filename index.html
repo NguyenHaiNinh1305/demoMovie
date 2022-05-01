@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;890&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
     <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -22,35 +23,35 @@
         <div id="wrap-content">
             <div id="intro">
                 <div class="welcome-line">
-                    <p>Welcome to </p>
-                    <p>cinema ticket</p>
-                    <p>managing system</p>
+                    <p>Welcome to cinema ticket managing system</p>
                 </div>
                 <div class="guide-line">
                     <p>Please log in to continue</p>
                 </div>
             </div>
-            <div id="login-part">
-                <label for=""></label>
-                <div id="btn-lg-admin">
-                    <button class="style-btn">LOG IN</button>
+            <div id="login-box">
+                <span class="check"></span>
+                <div id="label">Log In</div>
+                <div id="login-part">
+                    <form action="" id="form_login">
+                        <div>
+                            <label for="staff-id">Email</label>
+                            <span><i class="fa-solid fa-user"></i></span>
+                            <input type="text" name="staff-id" id="staff-id" placeholder="nguyena@gmail.com" autocomplete="on">
+        
+                        </div>
+                        <div>
+                            <label for="staff-password">Password</label>
+                            <span><i class="fa-solid fa-lock"></i></span>
+                            <input type="password" name="staff-password" id="staff-password" placeholder="password"
+                                autocomplete="on">
+                        </div>
+                        <button id="btn-lg" type="submit">Log In</button>
+                    </form>
                 </div>
-                <!-- <div id="btn-lg-staff" >
-                    <button class="style-btn" >Staff</button>
-                </div> -->
             </div>
         </div>
     </section>
-    <script>
-        $(document).ready(function () {
-            // $('#btn-lg-staff>button').click(function(){
-            //     window.location.replace("staff-login.html");
-            // });
-            $('#btn-lg-admin>button').click(function () {
-                window.location.href = "admin-login.html";
-            });
-        });
-    </script>
 </body>
-
+<script src="js\login.js"></script>
 </html>

@@ -17,11 +17,18 @@
 
 <body>
     <header>
-        <div id="cinema-logo">
-            <img id="image-logo" src="images/cgv_logo.jpg" />
+        <div id="logo-and-navbar">
+            <img id="image-logo" src="../images/cgv_logo.png" />
+            <ul id="navbar">
+                <li class="nav-item"><a href="admin_homepage.html">Homepage</a></li>
+                <li class="nav-item"><a href="staff_homepage.html">Staff interface</a></li>
+                <li class="nav-item"><a href="admin_manage_movie_list.html">Manage movie</a></li>
+                <li class="nav-item"><a href="manage_snack_list.html">Manage snack</a></li>
+                <li class="nav-item"><a href="manage_staff_account_list.html">Manage staff</a></li>
+            </ul>
         </div>
         <div id="profile">
-            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
         </div>
     </header>
     <div id="content">
@@ -30,14 +37,27 @@
         </div>
         <div id="title">Add</div>
         <div id="add-part">
-            <form action="">
-                <label for="name">Name</label>
-                <input type="text" id="name" size="100"><br>
-                <label for="image">Image</label>
-                <input type="text" id="image" size="100"><br>
-                <label for="price">Price</label>
-                <input type="text" id="price" size="100"><br>
-            </form>
+            <ul>
+                <li>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" size="50">
+                </li>
+                <li>
+                    <label for="image">Image</label>
+                    <input type="text" id="image" size="50">
+                </li>
+                <li>
+                    <label for="price">Price</label>
+                    <input type="text" id="price" size="50">
+                </li>
+                <li>
+                    <label for="type">Type</label>
+                    <select name="type" id="type">
+                        <option value="popcorn">Popcorn</option>
+                        <option value="drink">Drink</option>
+                    </select>
+                </li>
+            </ul>
         </div>
     </div>
     <footer>

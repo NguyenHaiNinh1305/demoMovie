@@ -1,6 +1,7 @@
 body {
     font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
     font-size: 24px;
+    margin: 0;
 }
 
 header {
@@ -44,47 +45,25 @@ header {
 
 #content {
     margin: 0 auto;
+    text-align: center;
 }
 
 #title {
     font-size: 32px;
     font-weight: bold;
-    text-align: center;
 }
 
-#list {
-    margin: 30px 60px;
-}
-
-.guide {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-#table-container {
+#button-menu {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-}
-
-table,
-th,
-td {
-    border: 1px solid #666666;
-    border-collapse: collapse;
-    font-size: 20px;
-}
-
-th {
-    background-color: #C21409;
-    color: white;
-    padding: 15px;
-}
-
-td {
-    padding: 10px;
+    align-items: center;
+    margin-top: 15px;
 }
 
 button {
+    background-color: #C21409;
     font-size: 20px;
     color: white;
     border: none;
@@ -94,38 +73,6 @@ button {
     display: inline;
     cursor: pointer;
 }
-
-
-
-#back-button {
-    border: 1px solid #C21409;
-    color: #C21409;
-    margin-top: 20px;
-}
-
-#back-button:hover {
+button:hover {
     background-color: #971007;
-    color: white;
-}
-
-.edit,
-.delete {
-    padding: 15px 20px;
-    margin: 5px;
-}
-
-.edit {
-    background-color: #E3C10E;
-}
-
-.edit:hover {
-    background-color: #D49B06;
-}
-
-.delete {
-    background-color: #AA0000;
-}
-
-.delete:hover {
-    background-color: #630000;
 }

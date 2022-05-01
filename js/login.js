@@ -39,7 +39,7 @@ $(document).ready(function () {
 
 });
 
-$('#pro-text').click(function () {
+$('#btn-prof').click(function () {
     localStorage.clear()
     window.location.replace("index.html")
 

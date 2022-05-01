@@ -17,11 +17,18 @@
 
 <body>
     <header>
-        <div id="cinema-logo">
-            <img id="image-logo" src="../images/cgv_logo.jpg" />
+        <div id="logo-and-navbar">
+            <img id="image-logo" src="../images/cgv_logo.png" />
+            <ul id="navbar">
+                <li class="nav-item"><a href="admin_homepage.html">Homepage</a></li>
+                <li class="nav-item"><a href="staff_homepage.html">Staff interface</a></li>
+                <li class="nav-item"><a href="admin_manage_movie_list.html">Manage movie</a></li>
+                <li class="nav-item"><a href="manage_snack_list.html">Manage snack</a></li>
+                <li class="nav-item"><a href="manage_staff_account_list.html">Manage staff</a></li>
+            </ul>
         </div>
         <div id="profile">
-            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
         </div>
     </header>
     <div id="content">
@@ -35,7 +42,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Movie</th>
+                            <th style="width: 600px;">Movie</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -90,6 +97,7 @@
                 </table>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination" id="pagination">
+                        <p>Pages: </p>
                         <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -112,6 +120,9 @@
             });
             $(".edit").click(function () {
                 window.location.replace("admin-manage-movie-edit.html");
+            });
+            $("#add-button").click(function () {
+                window.location.replace("admin_manage_movie_add.html");
             });
             $("#cancel-button").click(function () {
                 window.location.replace("admin_homepage.html");

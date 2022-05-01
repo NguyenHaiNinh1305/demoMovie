@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/manage_snack_edit.css">
+    <link rel="stylesheet" href="css/manage_staff_account_add.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <title>Manage snack</title>
+    <title>Manage staff’s account</title>
 </head>
 
 <body>
@@ -33,36 +32,35 @@
     </header>
     <div id="content">
         <div id="article">
-            <h1>Manage snack</h1>
+            <h1>Manage staff’s account</h1><br>
         </div>
-        <div id="title">Edit</div>
-        <div id="edit-part">
-            <div id="image-part">
-                <img src="images/snack.jpg" alt="" width="400" height="400">
-            </div>
-            <div id="form-part">
-                <ul>
-                    <li>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" size="50">
-                    </li>
-                    <li>
-                        <label for="image">Image</label>
-                        <input type="text" id="image" size="50">
-                    </li>
-                    <li>
-                        <label for="price">Price</label>
-                        <input type="text" id="price" size="50">
-                    </li>
-                    <li>
-                        <label for="type">Type</label>
-                        <select name="type" id="type">
-                            <option value="popcorn">Popcorn</option>
-                            <option value="drink">Drink</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
+        <div id="title">Add</div>
+        <div id="add-part">
+            <ul>
+                <li>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" size="50">
+                </li>
+                <li>
+                    <label for="age">Age</label>
+                    <input type="text" id="age" size="50">
+                </li>
+                <li>
+                    <label for="role">Role</label>
+                    <select name="type" id="role">
+                        <option value="admin">Admin</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" size="50">
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="text" id="password" size="50">
+                </li>
+            </ul>
         </div>
     </div>
     <footer>
