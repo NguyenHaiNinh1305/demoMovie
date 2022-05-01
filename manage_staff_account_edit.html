@@ -17,11 +17,18 @@
 
 <body>
     <header>
-        <div id="cinema-logo">
-            <img id="image-logo" src="images/cgv_logo.jpg" />
+        <div id="logo-and-navbar">
+            <img id="image-logo" src="../images/cgv_logo.png" />
+            <ul id="navbar">
+                <li class="nav-item"><a href="admin_homepage.html">Homepage</a></li>
+                <li class="nav-item"><a href="staff_homepage.html">Staff interface</a></li>
+                <li class="nav-item"><a href="admin_manage_movie_list.html">Manage movie</a></li>
+                <li class="nav-item"><a href="manage_snack_list.html">Manage snack</a></li>
+                <li class="nav-item"><a href="manage_staff_account_list.html">Manage staff</a></li>
+            </ul>
         </div>
         <div id="profile">
-            <button id="pro-text"><i class="fa-solid fa-user"></i></button>
+            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
         </div>
     </header>
     <div id="content">
@@ -30,19 +37,27 @@
         </div>
         <div id="title">Edit</div>
         <div id="edit-part">
-            <form action="">
-                <label for="name">Name</label>
-                <input type="text" id="name" size="100"><br>
-                <label for="age">Age</label>
-                <input type="text" id="age" size="100"><br>
-                <label for="role">Role</label>
-                <select name="" id="role">
-                    <option value="">Role</option>
-                    <option value="">Staff</option>
-                </select><br>
-                <label for="email">Email</label>
-                <input type="email" id="email" size="100"><br>
-            </form>
+            <ul>
+                <li>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" size="50">
+                </li>
+                <li>
+                    <label for="age">Age</label>
+                    <input type="text" id="age" size="50">
+                </li>
+                <li>
+                    <label for="role">Role</label>
+                    <select name="type" id="role">
+                        <option value="admin">Admin</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" size="50">
+                </li>
+            </ul>
         </div>
     </div>
     <footer>

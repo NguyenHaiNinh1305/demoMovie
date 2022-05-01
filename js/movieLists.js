@@ -1,12 +1,8 @@
-
 var SIZE = 4;
 var currentPage = 1;
 var isAsc = true;
 var currentFieldName = "id";
 var movies = [];
-
-
-
 
 function getListMovies() {
     // call API from server
@@ -58,25 +54,18 @@ function fillMovieToTable() {
 
         str +=
             '<td>' + item.id + '</td>' +
-            '<td>' + item.name + '</td>' +
+            '<td style="width: 600px;">' + item.name + '</td>' +
             '<td> <button class="view" id = "nextPageDetails" onclick = "transtonextPage(' + item.id + ')" value="' + item.id + '">View</button> <button class="edit" onclick="editdetails(' + item.id + ')">Edit</button > <button class="delete"  onclick="deleteDetails(' + item.id + ')">Delete</button></td >';
 
         str += '</tr>';
         $('tbody').append(str);
-
-
-
     })
-
-
 }
-
 
 function buildTable() {
     $('tbody').empty();
     getListMovies();
 }
-
 
 function clickViewListMovie() {
 
@@ -103,6 +92,7 @@ function onClickPage(page) {
 
 function renderPaging(totalPages) {
     $('#pagination').empty();
+    $('#pagination').append('<li>Pages: </li>');
     for (let index = 1; index <= totalPages; index++) {
         $('#pagination').append(
             '<li class="page-item">' +
@@ -112,22 +102,11 @@ function renderPaging(totalPages) {
     }
 }
 
-
-// function viewdetails() {
-
-//     window.location.replace("admin-manage-movie-detail.html");
-
-// }
-
-//window.location.replace("admin-manage-movie-detail.html")
-
 function getMovie(id) {
     // call API from server
-
     var url = "http://localhost:8080/v1/movie" + "/";
 
     url += id;
-
 
     $.ajax({
         url: url,
@@ -141,7 +120,6 @@ function getMovie(id) {
         success: function (data, textStatus, xhr) {
             // reset list employees
 
-
             // error
             if (status == "error") {
                 // TODO
@@ -153,7 +131,6 @@ function getMovie(id) {
             $('#wrapper-content').empty();
 
             var str = "";
-
 
             str += '<div id="img-part"> <img src="' + data.poster + '" alt="Neon genesis"></div>'
             str += '<div id="detail-movie">'
@@ -169,7 +146,6 @@ function getMovie(id) {
 
             $('#wrapper-content').append(str);
             //transtonextPage(id)
-
         },
         error(jqXHR, textStatus, errorThrown) {
             console.log(jqXHR);
@@ -180,14 +156,64 @@ function getMovie(id) {
 }
 
 function transtonextPage(id) {
-
     $('body').load("admin-manage-movie-detail.html")
     getMovie(id);
 }
 
+function addMovie() {
+    var title = document.getElementById("title").value
+    var director = document.getElementById("director").value
+    var cast = document.getElementById("Cast").value;
+    var genre = document.getElementById("genre").value;
+    var language = document.getElementById("language").value;
+    var rate = document.getElementById("rate").value;
+    var starttime = document.getElementById("start-time").value + ":00";
+    var endtime = document.getElementById("end-time").value + ":00";
+    var poster = document.getElementById("imageposter").src;
+    var today = new Date();
+    var date = today.getFullYear() + '-' + "0" + (today.getMonth() + 1) + '-' + today.getDate();
+
+    var movie = {
+        id: id,
+        name: title,
+        director: director,
+        cast: cast,
+        genre: genre,
+        language: language,
+        rate: rate,
+        durationStart: starttime,
+        durationEnd: endtime,
+        poster: poster,
+        releaseDate: date
+    }
+
+    $.ajax({
+        url: 'http://localhost:8080/v1/movie/add',
+        type: 'POST',
+        data: JSON.stringify(movie),
+        contentType: "application/json",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(
+                localStorage.getItem("accountName") + ":" + localStorage.getItem("password")));
+        },
+        success: function (result) {
+            // success
+            getListMovies()
+            window.location.href = "admin_manage_movie_list.html"
+        },
+        error(jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 403) {
+                window.location.href = "http://localhost:5501/html/forbidden.html";
+            } else {
+                console.log();
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        }
+    });
+}
 
 function updateMovie(id) {
-
     var title = document.getElementById("title").value
     var director = document.getElementById("director").value
     var cast = document.getElementById("Cast").value;
@@ -212,9 +238,8 @@ function updateMovie(id) {
         durationEnd: endtime,
         poster: poster,
         releaseDate: date
-
-
     }
+
     $.ajax({
         url: 'http://localhost:8080/v1/movie/' + id,
         type: 'PUT',
@@ -231,7 +256,6 @@ function updateMovie(id) {
             getListMovies()
 
             window.location.href = "admin_manage_movie_list.html"
-
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
@@ -245,6 +269,7 @@ function updateMovie(id) {
     });
 
 }
+
 function editdetails(id) {
     localStorage.setItem("movieId", id)
     $('body').load("admin-manage-movie-edit.html")
@@ -253,9 +278,7 @@ function editdetails(id) {
 
 function updateOk() {
     updateMovie(localStorage.getItem("movieId"))
-
 }
-
 
 function deleteDetails(id) {
     let text = "Do you really want to delete this field?\nEither OK or Cancel.";
@@ -268,7 +291,6 @@ function deleteDetails(id) {
 }
 
 function deleteMovie(id) {
-
     $.ajax({
         url: 'http://localhost:8080/v1/movie/' + id,
         type: 'DELETE',
@@ -278,7 +300,6 @@ function deleteMovie(id) {
         },
         success: function (result) {
             // success
-
 
             window.location.href = "admin_manage_movie_list.html"
 

@@ -1,84 +1,129 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     background: linear-gradient(0deg, rgba(186, 186, 186, 0.29), rgba(186, 186, 186, 0.29)), url("../images/start_screen_img.png");
-    background-repeat:no-repeat;
-    background-size:100% 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
     background-attachment: fixed;
 }
-#wrapper{
-    width: 80%;
-    
-}
-#wrap-content{
-    width: 100%;
-    position: absolute;
-    top: 200px;
+
+#wrap-content {
+    margin: 40px;
     display: flex;
+    align-items: baseline;
 }
-div#intro{
-    padding-left: 100px;
-    flex-basis: 50%;
+
+#intro {
+    width: 60%;
+    margin-right: 20px;
 }
-.welcome-line{
+
+.welcome-line {
     text-align: left;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 900;
     font-size: 68px;
-    line-height: 0px;
     color: #FFFFFF;
 }
-.guide-line{
+
+.guide-line {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
-    line-height: 28px;
     color: #FFFFFF;
 }
-div#login-part{
-    flex-basis: 50%;
-    justify-content: center;
+
+#login-box {
+    width: 40%;
+    height: 400px;
+    display: block;
+    background-color: white;
+    border-radius: 16px;
+}
+
+#label {
+    margin: 10px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    color: #000000;
+}
+
+#login-part {
+    margin: 0 35px;
+}
+
+#login-part form {
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    display: flex;
+    flex-direction: column;
     align-content: space-around;
 }
-label{
-    width: 100%;
+
+label {
     display: block;
-    text-align: center;
-    padding: 15px;
+    padding: 10px 0;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
-    line-height: 28px;
-    color: #FFFFFF;
 }
-#btn-lg-admin{
-    width: 480px;
-    display: flex;
-    justify-content: space-around;
+
+form div {
+    margin-bottom: 10px;
 }
-#btn-lg-staff{
-    width: 480px;     
-    display: flex;
-    justify-content: space-around;
+
+label {
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
 }
-.style-btn{
+
+i {
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    color: #C21409;
+}
+
+#login-part div input {
+    width: 100%;
+    position: relative;
+    border: 1.5px solid #C21409;
+    box-sizing: border-box;
+    border-radius: 16px;
+    min-height: 40px;
+    padding-left: 30px;
+}
+
+button#btn-lg {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     background: #C21409;
     color: white;
     border-radius: 100px;
     border: 0px;
-    padding: 15px 80px;
+    padding: 15px;
 }
 
+#btn-lg {
+    padding: 10px 20px;
+    margin: 30px;
+}
+
+.check{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    padding-left: 20px ;
+    color: #C21409;
+}

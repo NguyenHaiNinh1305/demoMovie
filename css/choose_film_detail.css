@@ -29,7 +29,7 @@ header {
     width: 50%;
 }
 
-#pro-text {
+#btn-prof {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +39,8 @@ header {
     border-radius: 100%;
     background-color: #D49B06;
     padding: 30px;
+    color: white;
+    border: none;
 }
 /* --------------------------------------------body---------------------------------------------------------- */
 .content-part{

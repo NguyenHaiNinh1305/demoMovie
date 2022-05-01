@@ -1,20 +1,44 @@
-* {
-    box-sizing: border-box;
-}
-
 /*---------------header------------------------------ */
-#header {
-    display: flex;
-    margin: 20px;
-    padding: 15px;
-    flex-wrap: wrap;
+body {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 24px;
+    margin: 0;
 }
 
-#cinema-logo {
-    width: 50%;
+header {
+    padding: 15px;
+    display: flex;
+    background-color: #C21409;
+    height: 80px;
+}
+
+#logo-and-navbar {
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+ul#navbar {
+    font-size: 18px;
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+li.nav-item>a {
+    display: block;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+}
+
+li.nav-item>a:hover {
+    background-color: white;
+    color: #630000;
 }
 
 #image-logo {
@@ -23,10 +47,11 @@
 }
 
 #profile {
-    width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 10%;
+    margin: 0;
 }
 
 #btn-prof {
@@ -39,23 +64,24 @@
     border-radius: 100%;
     background-color: #D49B06;
     padding: 30px;
+    color: white;
     border: none;
-    color: #fff;
 }
 
-div#title-part {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
+#title-part {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
 }
 
+.guide {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
 /*---------------body------------------------------ */
 div#wrapper-content {
     display: flex;
+    flex-direction: column;
     margin: 50px;
 }
 
@@ -77,8 +103,6 @@ div#edit-movie {
     width: 60%;
     margin-left: 20px;
     font-family: 'Be Vietnam Pro';
-    font-style: normal;
-    font-weight: 600;
     color: #000000;
 }
 
@@ -93,9 +117,10 @@ input {
     border-radius: 100px;
     padding-left: 20px;
     flex-shrink: 2;
+    height: 30px;
 }
 
-#seats-type {
+/* #seats-type {
     background: #FFFFFF;
     border: 1.5px solid #C21409;
     border-radius: 100px;
@@ -110,7 +135,7 @@ input {
 
 .fa-plus {
     color: #C21409;
-}
+} */
 
 /*---------------footer------------------------------ */
 div#footer {
