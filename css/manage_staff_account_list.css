@@ -123,6 +123,7 @@ li.nav-item>a:hover {
 #table-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 table, th, td {

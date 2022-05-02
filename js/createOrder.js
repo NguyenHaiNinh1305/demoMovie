@@ -101,6 +101,7 @@ function onClickPage(page) {
 
 function renderPaging(totalPages) {
     $('#pagination').empty();
+    $('#pagination').append('<li>Pages: </li>');
     for (let index = 1; index <= totalPages; index++) {
         $('#pagination').append(
             '<li class="page-item">' +

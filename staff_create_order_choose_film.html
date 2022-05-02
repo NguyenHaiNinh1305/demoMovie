@@ -74,7 +74,15 @@
                 </ul>
             </nav>
         </section>
+        <button id="cancel-button">Cancel</button>
     </div>
+    <script>
+        $(document).ready(function(){
+            $("#cancel-button").click(function(){
+                window.location.replace("staff_homepage.html");
+            });
+        });
+    </script>
 </body>
 <script src="js\createOrder.js"></script>
 <script src="js\login.js"></script>

@@ -98,6 +98,7 @@ header {
 #table-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 table,
@@ -129,9 +130,8 @@ button {
     cursor: pointer;
 }
 
-
-
 #back-button {
+    background-color: white;
     border: 1px solid #C21409;
     color: #C21409;
     margin-top: 20px;
@@ -142,24 +142,26 @@ button {
     color: white;
 }
 
-.edit,
 .delete {
     padding: 15px 20px;
     margin: 5px;
-}
-
-.edit {
-    background-color: #E3C10E;
-}
-
-.edit:hover {
-    background-color: #D49B06;
-}
-
-.delete {
     background-color: #AA0000;
 }
 
 .delete:hover {
     background-color: #630000;
+}
+
+ul#pagination {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    text-align: center;
+}
+
+li.page-item {
+    padding: 0 5px;
+    margin: 0 5px;
+    border: 1px solid #666666;
+    border-radius: 7px;
 }
