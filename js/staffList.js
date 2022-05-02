@@ -149,8 +149,6 @@ function addStaff() {
         password: password
     }
 
-    console.log(staff);
-
     $.ajax({
         url: 'http://localhost:8080/api/accounts',
         type: 'POST',
@@ -173,8 +171,8 @@ function addStaff() {
                 window.location.href = "http://localhost:5501/html/forbidden.html";
             } else {
                 console.log('error');
-                // console.log(textStatus);
-                // console.log(errorThrown);
+                console.log(textStatus);
+                console.log(errorThrown);
             }
         }
     });
