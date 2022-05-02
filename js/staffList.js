@@ -170,7 +170,7 @@ function addStaff() {
             if (jqXHR.status == 403) {
                 window.location.href = "http://localhost:5501/html/forbidden.html";
             } else {
-                console.log();
+                console.log('error');
                 console.log(textStatus);
                 console.log(errorThrown);
             }
@@ -203,6 +203,8 @@ function updateStaff(id) {
         },
         success: function (result) {
             // success
+            console.log(staff);
+            console.log('success');
             localStorage.removeItem("staffId");
             getStaffList();
             window.location.href = "manage_staff_account_list.html"

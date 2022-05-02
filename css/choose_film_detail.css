@@ -137,8 +137,10 @@ div.img-part{
 .box-date{
     text-align: center;
     border: 1px solid #5A637A;
-    min-width: 80px;
-    min-height: 80px;
+    background-color: white;
+    color: black;
+    min-width: 60px;
+    min-height: 60px;
     border-radius: 10px;
     margin: 10px;
     font-family: 'Roboto';
@@ -180,9 +182,13 @@ div.img-part{
     flex-wrap: wrap;
 }
 .box-time{
+    font-family: 'Roboto';
+    font-weight: bold;
+    background-color: white;
+    color: black;
     box-sizing: border-box;
-    min-height: 20px;
-    min-width:  40px;
+    min-width: 65px;
+    min-height: 50px;
     text-align: center;
     border: 1px solid #5A637A;
     margin: 10px 10px 10px 0px;
@@ -194,6 +200,11 @@ div.img-part{
     background: #DADFE8;
     color: #9DA8BE;
     border: none;
+}
+.box-time-selected{
+    background: #D62020;
+    border: none;
+    color: #FFFFFF;
 }
 .col-price{
     display: flex;

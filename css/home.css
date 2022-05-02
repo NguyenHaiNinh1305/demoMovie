@@ -12,7 +12,7 @@ body {
 #wrap-content {
     margin: 40px;
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 #intro {
@@ -39,7 +39,7 @@ body {
 
 #login-box {
     width: 40%;
-    height: 400px;
+    height: 500px;
     display: block;
     background-color: white;
     border-radius: 16px;
@@ -53,6 +53,10 @@ body {
     font-weight: 700;
     font-size: 48px;
     color: #000000;
+}
+
+.check i {
+    position: relative;
 }
 
 #login-part {
@@ -101,6 +105,17 @@ i {
     padding-left: 30px;
 }
 
+#register {
+    font-family: 'Be Vietnam Pro', 'Intel', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+#register i {
+    position: relative;
+    padding: 5px;
+}
+
 button#btn-lg {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -116,7 +131,7 @@ button#btn-lg {
 
 #btn-lg {
     padding: 10px 20px;
-    margin: 30px;
+    margin: 20px;
 }
 
 .check{

@@ -50,15 +50,13 @@
 </body>
 
 <script>
-
-    $("#done").click(function () {
-
-        registerAccount()
-
-
+    $("cancel").click(function () {
+        window.location.href = "http://127.0.0.1:5500/index.html";
     })
 
-
+    $("#done").click(function () {
+        registerAccount()
+    })
 
     function registerAccount() {
         var accname = document.getElementById('name').value
@@ -87,7 +85,7 @@
                     error() {
 
                         alert('Create account successfully')
-                        window.location.replace("http://127.0.0.1:5500/admin-login.html")
+                        window.location.replace("http://127.0.0.1:5500/index.html")
                     }
                 });
             } else {

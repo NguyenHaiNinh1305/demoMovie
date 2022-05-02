@@ -68,22 +68,22 @@
                     <p>15 Mar</p>
                     <p>TUE</p>
                 </button>
-                <div class="box-date box-date-selected">
+                <button class="box-date box-date-selected">
                     <p>15 Mar</p>
                     <p>TUE</p>
-                </div>
-                <div class="box-date">
+                </button>
+                <button class="box-date">
                     <p>15 Mar</p>
                     <p>TUE</p>
-                </div>
-                <div class="box-date">
+                </button>
+                <button class="box-date">
                     <p>15 Mar</p>
                     <p>TUE</p>
-                </div>
-                <div class="box-date">
+                </button>
+                <button class="box-date">
                     <p>15 Mar</p>
                     <p>TUE</p>
-                </div>
+                </button>
             </div>
         </div>
         <div class="time-part">
@@ -94,21 +94,21 @@
                 <div col="col-seat-type">
                     <h3 class="seat-type-style">REGULAR 2D</h3>
                     <div class="row-time-movie" onclick="choosetimefor2d()">
-                        <div class="box-time box-time-out-of-date">
+                        <button class="box-time box-time-out-of-date">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div class="col-price">
@@ -117,21 +117,21 @@
                 <div col="col-seat-type">
                     <h3 class="seat-type-style">GOLD CLASS 2D</h3>
                     <div class="row-time-movie" onclick="choosetimefor3d()">
-                        <div class="box-time">
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
-                        <div class="box-time">
+                        </button>
+                        <button class="box-time">
                             12:15
-                        </div>
+                        </button>
                     </div>
                 </div>
                 <div class="col-price">
@@ -147,9 +147,16 @@
 </body>
 <script>
     $('#cancel').click(function () {
-        window.location.replace("staff_create_order_choose_film.html")
-
-    })
+        window.location.replace("staff_create_order_choose_film.html");
+    });
+    $('.box-date').on('click', function () {
+        $('.box-date').removeClass('box-date-selected');
+        $(this).addClass('box-date-selected');
+    });
+    $('.box-time').on('click', function () {
+        $('.box-time').removeClass('box-time-selected');
+        $(this).addClass('box-time-selected');
+    });
 </script>
 <script src="js\createOrder.js"></script>
 <script src="js\login.js"></script>
