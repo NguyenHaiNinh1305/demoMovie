@@ -28,7 +28,14 @@
             </ul>
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -39,8 +46,8 @@
             <p>Choose the function you want to perform</p>
             <div id="button-menu">
                 <button id="manage-movie" onclick="clickViewListMovie()">Manage movie</button>
-                <button id="manage-snack">Manage snack</button>
-                <button id="managa-staff-acc">Manage staff account</button>
+                <button id="manage-snack" onclick="clickViewSnackList()">Manage snack</button>
+                <button id="managa-staff-acc" onclick="clickViewStaffList()">Manage staff account</button>
             </div>
         </section>
     </div>
@@ -48,6 +55,8 @@
 </body>
 <script src="../js/movieLists.js"></script>
 <script src="js\login.js"></script>
+<script src="js/snackList.js"></script>
+<script src="js/staffList.js"></script>
 
 
 </html>

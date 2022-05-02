@@ -29,7 +29,14 @@
             </ul>
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -40,39 +47,52 @@
             <p class="guide">Staff list</p>
             <div id="table-container">
                 <table>
-                    <tr>
-                        <th>#</th>
-                        <th style="width: 500px;">Staff</th>
-                        <th>Action</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Nguyễn Phương Tân</td>
-                        <td>
-                            <button class="view">View</button>
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Nguyễn Hải Ninh</td>
-                        <td>
-                            <button class="view">View</button>
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Đặng Thư Trang</td>
-                        <td>
-                            <button class="view">View</button>
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th style="width: 500px;">Staff</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="onpressofabutton">
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>Nguyễn Phương Tân</td>
+                            <td>
+                                <button class="view">View</button>
+                                <button class="edit">Edit</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Nguyễn Hải Ninh</td>
+                            <td>
+                                <button class="view">View</button>
+                                <button class="edit">Edit</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Đặng Thu Trang</td>
+                            <td>
+                                <button class="view">View</button>
+                                <button class="edit">Edit</button>
+                                <button class="delete">Delete</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
                 </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="pagination">
+                        <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+                    </ul>
+                </nav>
             </div>
             <div id="add-btn-container">
                 <button id="add-button"><i class="fa-regular fa-plus"></i> Add</button>
@@ -80,7 +100,20 @@
             <button id="cancel-button">Cancel</button>
         </section>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#add-button").click(function () {
+                window.location.replace("manage_staff_account_add.html");
+            });
+            $("#cancel-button").click(function () {
+                window.location.replace("admin_homepage.html");
+            });
+        });
+
+    </script>
 </body>
 <script src="js\login.js"></script>
+<script src="js/staffList.js"></script>
 
 </html>

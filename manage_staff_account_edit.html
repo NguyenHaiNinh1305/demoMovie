@@ -28,7 +28,14 @@
             </ul>
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -62,9 +69,18 @@
     </div>
     <footer>
         <button id="cancel">Cancel</button>
-        <button id="done">Done</button>
+        <button id="done" onclick="updateOk()">Done</button>
     </footer>
+
+    <script>
+        $(document).ready(function () {
+            $("#cancel").click(function () {
+                window.location.replace("admin_manage_movie_list.html");
+            });
+        });
+    </script>
 </body>
 <script src="js\login.js"></script>
+<script src="js/snackList.js"></script>
 
 </html>

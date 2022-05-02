@@ -10,7 +10,7 @@ function clickViewStaffList() {
 
 function getStaffList() {
     // call API from server
-    var url = "http://localhost:8080/v1/staff/list";
+    var url = "http://localhost:8080/api/accounts";
     url += "?pageNumber=" + currentPage + "&size=" + SIZE;
     url += "&sort=" + currentFieldName + "," + (isAsc ? 'ASC' : 'DESC');
 
@@ -82,6 +82,7 @@ function onClickPage(page) {
 
 function renderPaging(totalPages) {
     $('#pagination').empty();
+    $('#pagination').append('<li>Pages: </li>');
     for (let index = 1; index <= totalPages; index++) {
         $('#pagination').append(
             '<li class="page-item">' +
@@ -92,7 +93,7 @@ function renderPaging(totalPages) {
 }
 
 function getStaff(id) {
-    var url = "http://localhost:8080/v1/staff" + "/";
+    var url = "http://localhost:8080/api/accounts/once?id=";
 
     url += id;
 
@@ -133,7 +134,51 @@ function getStaff(id) {
     })
 }
 
-function updateMovie(id) {
+function addStaff() {
+    var name = document.getElementById("name").value
+    var age = document.getElementById("age").value
+    var role = document.getElementById("role").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    var staff = {
+        accountName: name,
+        age: age,
+        role: role,
+        email: email,
+        password: password
+    }
+
+    $.ajax({
+        url: 'http://localhost:8080/api/accounts',
+        type: 'POST',
+        data: JSON.stringify(staff),
+        dataType: 'json',
+        contentType: "application/json",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(
+                localStorage.getItem("accountName") + ":" + localStorage.getItem("password")));
+        },
+        success: function (result) {
+            // success
+            console.log(staff);
+            console.log('success');
+            getStaffList();
+            window.location.href = "manage_staff_account_list.html"
+        },
+        error(jqXHR, textStatus, errorThrown) {
+            if (jqXHR.status == 403) {
+                window.location.href = "http://localhost:5501/html/forbidden.html";
+            } else {
+                console.log();
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
+        }
+    });
+}
+
+function updateStaff(id) {
     var name = document.getElementById("name").value
     var age = document.getElementById("age").value
     var role = document.getElementById("role").value;
@@ -148,7 +193,7 @@ function updateMovie(id) {
     }
 
     $.ajax({
-        url: 'http://localhost:8080/v1/staff/' + id,
+        url: 'http://localhost:8080/api/accounts/update?id=' + id,
         type: 'PUT',
         data: JSON.stringify(staff),
         contentType: "application/json",
@@ -160,9 +205,7 @@ function updateMovie(id) {
             // success
             localStorage.removeItem("staffId");
             getStaffList();
-
             window.location.href = "manage_staff_account_list.html"
-
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
@@ -187,7 +230,7 @@ function updateOk() {
 
 function deleteStaff(id) {
     $.ajax({
-        url: 'http://localhost:8080/v1/staff/' + id,
+        url: 'http://localhost:8080/api/accounts/delete?id=' + id,
         type: 'DELETE',
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa(

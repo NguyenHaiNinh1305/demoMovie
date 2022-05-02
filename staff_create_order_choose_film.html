@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/staff-create-order-choose-film.css">
     <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
-    <script src="js/jquery-3.6.0.min.js"></script>c
+    <script src="js/jquery-3.6.0.min.js"></script>
     <title>Create order: Choose film</title>
 </head>
 
@@ -21,7 +21,14 @@
             <img id="image-logo" src="images/cgv_logo_red.png" />
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
