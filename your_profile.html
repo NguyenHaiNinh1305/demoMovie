@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
     <title>Your Profile</title>
 </head>
 
@@ -20,7 +21,14 @@
             <img id="image-logo" src="images/cgv_logo_red.png" />
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -28,17 +36,17 @@
             <h1>Your profile</h1>
         </div>
         <div id="profile-part">
-            <div>
+            <!-- <div>
                 <p>Name: <span>Nguyễn Phương Tân</span></p>
                 <p>Age: <span>25</span></p>
                 <p>Role: <span>Admin</span></p>
                 <p>Email: <span>nguyenphuongtan@gmail.com</span></p>
-            </div>
+            </div> -->
         </div>
     </div>
     <footer>
-        <button id="cancel">Cancel</button>
-        <button id="done">Done</button>
+        <button id="cancel" onclick="returnHomepage()">Cancel</button>
+        <!-- <button id="edit">Edit</button> -->
     </footer>
 </body>
 <script src="js\login.js"></script>

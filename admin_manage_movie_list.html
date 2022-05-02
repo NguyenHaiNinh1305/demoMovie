@@ -28,7 +28,14 @@
             </ul>
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -115,12 +122,12 @@
 
     <script>
         $(document).ready(function () {
-            $(".view").click(function () {
-                window.location.replace("admin-manage-movie-detail.html");
-            });
-            $(".edit").click(function () {
-                window.location.replace("admin-manage-movie-edit.html");
-            });
+            // $(".view").click(function () {
+            //     window.location.replace("admin-manage-movie-detail.html");
+            // });
+            // $(".edit").click(function () {
+            //     window.location.replace("admin-manage-movie-edit.html");
+            // });
             $("#add-button").click(function () {
                 window.location.replace("admin_manage_movie_add.html");
             });

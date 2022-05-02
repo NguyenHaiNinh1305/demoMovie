@@ -86,6 +86,7 @@ function onClickPage(page) {
 
 function renderPaging(totalPages) {
     $('#pagination').empty();
+    $('#pagination').append('<li>Pages: </li>');
     for (let index = 1; index <= totalPages; index++) {
         $('#pagination').append(
             '<li class="page-item">' +
@@ -99,11 +100,13 @@ function addSnack() {
     var name = document.getElementById("name").value;
     var picture = document.getElementById("image").value;
     var price = document.getElementById("price").value;
+    var type = document.getElementById("type").value;
 
     var snack = {
         snackname: name,
         picture: picture,
-        snackprice: price
+        snackprice: price,
+        snacktype: type
     }
 
     $.ajax({
@@ -117,10 +120,10 @@ function addSnack() {
         },
         success: function (result) {
             // success
+            console.log(snack);
+            console.log('success');
             getSnackList();
-
             window.location.href = "manage_snack_list.html";
-
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
@@ -135,15 +138,18 @@ function addSnack() {
 }
 
 function updateSnack(id) {
+    console.log('hello')
     var name = document.getElementById("name").value;
     var picture = document.getElementById("image").value;
     var price = document.getElementById("price").value;
+    var type = document.getElementById("type").value;
 
     var snack = {
         id: id,
         snackname: name,
         picture: picture,
-        snackprice: price
+        snackprice: price,
+        snacktype: type
     }
 
     $.ajax({
@@ -157,11 +163,11 @@ function updateSnack(id) {
         },
         success: function (result) {
             // success
+            console.log(snack);
+            console.log('success');
             localStorage.removeItem("snackId");
             getSnackList();
-
             window.location.href = "manage_snack_list.html";
-
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {

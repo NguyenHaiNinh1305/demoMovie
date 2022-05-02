@@ -28,7 +28,14 @@
             </ul>
         </div>
         <div id="profile">
-            <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown">
+                <button id="btn-prof"><i class="fa-solid fa-user"></i></button>
+                <div class="dropdown-content">
+                    <a onclick="yourProfile()">Profile</a>
+                    <a href="admin_change_password.html">Change password</a>
+                    <a id="logout">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
     <div id="content">
@@ -37,9 +44,9 @@
         </div>
         <div id="title">Edit</div>
         <div id="edit-part">
-            <div id="image-part">
+            <!-- <div id="image-part">
                 <img src="images/snack.jpg" alt="" width="400" height="400">
-            </div>
+            </div> -->
             <div id="form-part">
                 <ul>
                     <li>
@@ -58,7 +65,7 @@
                         <label for="type">Type</label>
                         <select name="type" id="type">
                             <option value="popcorn">Popcorn</option>
-                            <option value="drink">Drink</option>
+                            <option value="drink" onclick="updateOk()">Drink</option>
                         </select>
                     </li>
                 </ul>
@@ -71,5 +78,6 @@
     </footer>
 </body>
 <script src="js\login.js"></script>
+<script src="js/snackList.js"></script>
 
 </html>

@@ -174,7 +174,6 @@ function addMovie() {
     var date = today.getFullYear() + '-' + "0" + (today.getMonth() + 1) + '-' + today.getDate();
 
     var movie = {
-        id: id,
         name: title,
         director: director,
         cast: cast,
@@ -198,6 +197,8 @@ function addMovie() {
         },
         success: function (result) {
             // success
+            console.log(movie);
+            console.log('success');
             getListMovies()
             window.location.href = "admin_manage_movie_list.html"
         },
@@ -212,6 +213,7 @@ function addMovie() {
         }
     });
 }
+// Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "2022-05-2": not a valid representation (error: Failed to parse Date value '2022-05-2': Cannot parse date "2022-05-2": while it seems to fit format 'yyyy-MM-dd', parsing fails (leniency? null)); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "2022-05-2": not a valid representation (error: Failed to parse Date value '2022-05-2': Cannot parse date "2022-05-2": while it seems to fit format 'yyyy-MM-dd', parsing fails (leniency? null))<LF> at [Source: (PushbackInputStream); line: 1, column: 273] (through reference chain: com.group.form.CreateUpdateMovieForm["releaseDate"])]
 
 function updateMovie(id) {
     var title = document.getElementById("title").value
