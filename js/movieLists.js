@@ -40,9 +40,9 @@ function getListMovies() {
 
         },
         error(jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
+            if (jqXHR.status == 403) {
+                window.location.replace("forbidden.html");
+            }
         }
     });
 }
@@ -148,9 +148,9 @@ function getMovie(id) {
             //transtonextPage(id)
         },
         error(jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
+            if (jqXHR.status == 403) {
+                window.location.replace("forbidden.html");
+            }
         }
     });
 }
@@ -171,7 +171,21 @@ function addMovie() {
     var endtime = document.getElementById("end-time").value + ":00";
     var poster = document.getElementById("imageposter").src;
     var today = new Date();
-    var date = today.getFullYear() + '-' + "0" + (today.getMonth() + 1) + '-' + today.getDate();
+    var month = ''
+    if (((today.getMonth() + 1) + '').length = 1) {
+        month = "0" + (today.getMonth() + 1)
+    } else {
+        month = today.getMonth() + 1
+    }
+
+    var daytoday = ''
+    if ((today.getDate() + '').length = 1) {
+        daytoday = "0" + today.getDate()
+    } else {
+        daytoday = today.getDate()
+    }
+
+    var date = today.getFullYear() + '-' + month + '-' + daytoday;
 
     var movie = {
         name: title,
@@ -204,11 +218,7 @@ function addMovie() {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });
@@ -261,11 +271,7 @@ function updateMovie(id) {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });
@@ -308,11 +314,7 @@ function deleteMovie(id) {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });

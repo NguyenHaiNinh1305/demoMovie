@@ -59,10 +59,35 @@ function createTicket() {
 
     var movieId = localStorage.getItem("movieId")
     var today = new Date();
-    var time = "0" + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var hour = ''
+    var minute = ''
+    var second = ''
+    if (today.getHours().length == 1) {
+        hour = "0" + today.getHours()
+    } else {
+        hour = today.getHours()
+
+    }
+    if (today.getSeconds().length == 1) {
+        second = "0" + today.getSeconds()
+    } else {
+        second = today.getSeconds()
+
+    }
+    if (today.getMinutes().length == 1) {
+        minute = "0" + today.getMinutes()
+    } else {
+        minute = today.getMinutes()
+
+    }
+    var time = hour + ":" + minute + ":" + second;
 
     var listseat = localStorage.getItem("listseatId")
-    price = price * listseat.split(",").length
+    if (listseat.split(",").length === undefined) {
+        price = price
+    } else {
+        price = price * listseat.split(",").length
+    }
 
     var ticket = {
         id: 1,

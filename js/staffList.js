@@ -40,9 +40,9 @@ function getStaffList() {
 
         },
         error(jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
+            if (jqXHR.status == 403) {
+                window.location.replace("forbidden.html");
+            }
         }
     });
 }
@@ -102,11 +102,11 @@ function getStaff(id) {
         type: 'GET',
         contentType: "application/json",
         dataType: 'json',
-        beforeSend: function(xhr) {
+        beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa(
                 localStorage.getItem("accountName") + ":" + localStorage.getItem("password")));
         },
-        success: function(data, textStatus, xhr) {
+        success: function (data, textStatus, xhr) {
             // error
             if (status == "error") {
                 alert("Error when loading data");
@@ -127,9 +127,9 @@ function getStaff(id) {
             $('#detail-part').append(str);
         },
         error(jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
+            if (jqXHR.status == 403) {
+                window.location.replace("forbidden.html");
+            }
         }
     })
 }
@@ -168,11 +168,7 @@ function addStaff() {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log('error');
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });
@@ -211,11 +207,7 @@ function updateStaff(id) {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });
@@ -243,11 +235,7 @@ function deleteStaff(id) {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });

@@ -170,6 +170,7 @@ function getMoviess(id) {
 function chooseday() {
     localStorage.setItem("datechoosed", 1000)
 }
+
 function choosetimefor2d() {
     localStorage.setItem("price2d", 70000)
 }

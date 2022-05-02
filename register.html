@@ -74,18 +74,17 @@
             if (newpassword == confirmpass) {
                 $.ajax({
                     url: 'http://localhost:8080/login/signup',
-                    type: 'POST',
-                    dataType: 'json',
+                    method: 'POST',
+                    contentType: 'application/json',
                     data: JSON.stringify(formreg),
-                    contentType: "application/json",
                     success: function () {
-
-
-                    },
-                    error() {
-
                         alert('Create account successfully')
                         window.location.replace("http://127.0.0.1:5500/index.html")
+
+                    },
+                    error(jqXHR) {
+                        alert(jqXHR.status)
+
                     }
                 });
             } else {

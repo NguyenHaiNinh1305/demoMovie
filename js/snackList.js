@@ -127,11 +127,7 @@ function addSnack() {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });
@@ -171,11 +167,7 @@ function updateSnack(id) {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });
@@ -203,11 +195,7 @@ function deleteSnack(id) {
         },
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
-                window.location.href = "http://localhost:5501/html/forbidden.html";
-            } else {
-                console.log();
-                console.log(textStatus);
-                console.log(errorThrown);
+                window.location.replace("forbidden.html");
             }
         }
     });

@@ -40,8 +40,12 @@ $(document).ready(function () {
 });
 
 $('#logout').click(function () {
-    localStorage.clear()
-    window.location.replace("index.html")
+    if (window.confirm('Are you sure you want to log out?')) {
+        localStorage.clear()
+        window.location.replace("index.html")
+    } else {
+        return
+    }
 })
 
 function loadProfile() {
@@ -77,6 +81,13 @@ function disableBtn() {
         window.location.href = "http://127.0.0.1:5500/admin_homepage.html";
     }
 }
+function disable() {
+    const role = localStorage.getItem('role');
+    if (role == 'staff') {
+        $("#return-to-admin").css("display", "none");
+    }
+}
+disable()
 
 function returnHomepage() {
     const role = localStorage.getItem('role');
