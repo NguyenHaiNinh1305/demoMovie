@@ -176,39 +176,39 @@ function addMovie() {
         return
     } else {
         if (title == "") {
-            alert("Please type title")
+            alert("All of the field must not be left blank value")
             return
         }
         if (releaseDate == "") {
-            alert("Please choose releaseDate")
+            alert("All of the field must not be left blank value")
             return
         }
         if (director == "") {
-            alert("Please type director")
+            alert("All of the field must not be left blank value")
             return
         }
         if (cast == "") {
-            alert("Please type cast")
+            alert("All of the field must not be left blank value")
             return
         }
         if (genre == "") {
-            alert("Please type genre")
+            alert("All of the field must not be left blank value")
             return
         }
         if (language == "") {
-            alert("Please type language")
+            alert("All of the field must not be left blank value")
             return
         }
-        if (rate == "") {
-            alert("Please type rate")
+        if (rate == ":00") {
+            alert("All of the field must not be left blank value")
             return
         }
-        if (starttime == "") {
-            alert("Please choose starttime")
+        if (starttime == ":00") {
+            alert("All of the field must not be left blank value")
             return
         }
         if (endtime == "") {
-            alert("Please choose endtime")
+            alert("All of the field must not be left blank value")
             return
         }
         if (poster == "") {
@@ -246,8 +246,7 @@ function addMovie() {
         },
         success: function (result) {
             // success
-            console.log(movie);
-            console.log('success');
+            alert("Create successfuly!");
             getListMovies()
             window.location.href = "admin_manage_movie_list.html"
         },
@@ -276,43 +275,43 @@ function updateMovie(id) {
         return
     } else {
         if (title == "") {
-            alert("Please type title")
+            alert("All of the field must not be left blank value")
             return
         }
         if (releaseDate == "") {
-            alert("Please choose releaseDate")
+            alert("All of the field must not be left blank value")
             return
         }
         if (director == "") {
-            alert("Please type director")
+            alert("All of the field must not be left blank value")
             return
         }
         if (cast == "") {
-            alert("Please type cast")
+            alert("All of the field must not be left blank value")
             return
         }
         if (genre == "") {
-            alert("Please type genre")
+            alert("All of the field must not be left blank value")
             return
         }
         if (language == "") {
-            alert("Please type language")
+            alert("All of the field must not be left blank value")
             return
         }
         if (rate == "") {
-            alert("Please type rate")
+            alert("All of the field must not be left blank value")
             return
         }
-        if (starttime == "") {
-            alert("Please choose starttime")
+        if (starttime == ":00") {
+            alert("All of the field must not be left blank value")
             return
         }
-        if (endtime == "") {
-            alert("Please choose endtime")
+        if (endtime == ":00") {
+            alert("All of the field must not be left blank value")
             return
         }
         if (poster == "") {
-            alert("Please type poster")
+            alert("All of the field must not be left blank value")
             return
         }
     }

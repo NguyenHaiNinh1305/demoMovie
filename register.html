@@ -64,11 +64,38 @@
         var age = document.getElementById('age').value
         var newpassword = document.getElementById('newpassword').value
         var confirmpass = document.getElementById('password').value
+
+        if (accname == "" && email == "" && age == "" && newpassword == "" && confirmpass == "") {
+            alert("All of the field must not be left blank value")
+            return
+        } else {
+            if (accname == "") {
+                alert("All of the field must not be left blank value")
+                return
+            }
+            if (email == "") {
+                alert("All of the field must not be left blank value")
+                return
+            }
+            if (age == "") {
+                alert("All of the field must not be left blank value")
+                return
+            }
+            if (newpassword == "") {
+                alert("All of the field must not be left blank value")
+                return
+            }
+            if (confirmpass == "") {
+                alert("All of the field must not be left blank value")
+                return
+            }
+        }
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (!email.match(mailformat)) {
             alert("incorrect email pattern")
             return
         }
+
         var passwordformat = /^(?=.*\d).{6,}$/
         if (!newpassword.match(passwordformat)) {
             alert("At least 6 characters required")

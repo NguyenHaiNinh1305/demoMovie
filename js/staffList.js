@@ -152,20 +152,20 @@ function addStaff() {
         return
     } else {
         if (name == "") {
-            alert("Please type name")
+            alert("All of the field must not be left blank value")
             return
         }
         if (age == "") {
-            alert("Please choose age")
+            alert("All of the field must not be left blank value")
             return
         }
 
         if (email == "") {
-            alert("Please choose email")
+            alert("All of the field must not be left blank value")
             return
         }
         if (password == "") {
-            alert("Please type password")
+            alert("All of the field must not be left blank value")
             return
         }
     }
@@ -206,8 +206,7 @@ function addStaff() {
         },
         success: function (result) {
             // success
-            console.log(staff);
-            console.log('success');
+            alert("Create successfuly!");
             getStaffList();
             window.location.href = "manage_staff_account_list.html"
         },
@@ -231,16 +230,16 @@ function updateStaff(id) {
         return
     } else {
         if (name == "") {
-            alert("Please type name")
+            alert("All of the field must not be left blank value")
             return
         }
         if (age == "") {
-            alert("Please choose age")
+            alert("All of the field must not be left blank value")
             return
         }
 
         if (email == "") {
-            alert("Please choose email")
+            alert("All of the field must not be left blank value")
             return
         }
 

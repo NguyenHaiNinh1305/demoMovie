@@ -107,15 +107,15 @@ function addSnack() {
         return
     } else {
         if (name == "") {
-            alert("Please type name")
+            alert("All of the field must not be left blank value")
             return
         }
         if (picture == "") {
-            alert("Please choose picture")
+            alert("All of the field must not be left blank value")
             return
         }
         if (price == "") {
-            alert("Please type price")
+            alert("All of the field must not be left blank value")
             return
         }
     }
@@ -142,7 +142,7 @@ function addSnack() {
         },
         success: function (result) {
             // success
-            alert("ok")
+            alert("Create successfuly!");
             getSnackList();
             window.location.href = "manage_snack_list.html";
         },
@@ -165,15 +165,15 @@ function updateSnack(id) {
         return
     } else {
         if (name == "") {
-            alert("Please type name")
+            alert("All of the field must not be left blank value")
             return
         }
         if (picture == "") {
-            alert("Please choose picture")
+            alert("All of the field must not be left blank value")
             return
         }
         if (price == "") {
-            alert("Please type price")
+            alert("All of the field must not be left blank value")
             return
         }
     }
