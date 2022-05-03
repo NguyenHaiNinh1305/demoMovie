@@ -1,10 +1,5 @@
 
-function directloginpage() {
-    if (localStorage.getItem("accountName") == undefined && localStorage.getItem("password") == undefined) {
-        window.location.href = "http://127.0.0.1:5500/index.html"
-    }
-}
-directloginpage()
+
 $(document).ready(function () {
     $('#form_login').on("submit", function (e) {
         e.preventDefault();
