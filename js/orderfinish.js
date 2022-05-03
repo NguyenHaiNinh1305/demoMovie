@@ -1,7 +1,6 @@
 
 $("#next-button").click(function () {
     if (window.confirm("Create order now")) {
-        alert()
         if ((localStorage.getItem("selectedidfood") !== null)) {
             if (localStorage.getItem("selectedidfood") !== '') {
                 var idfood = localStorage.getItem("selectedidfood").split(",")
@@ -110,14 +109,14 @@ function createTicket() {
         },
         success: function (data) {
             // success
-            alert('ok')
+
             getticketid()
 
 
 
         },
         error(jqXHR, textStatus, errorThrown) {
-            alert('l')
+
             if (jqXHR.status == 403) {
                 window.location.href = "http://localhost:5501/html/forbidden.html";
             } else {
@@ -144,6 +143,9 @@ function createODLTicket() {
 
     var listseat = localStorage.getItem("listseatId")
     num = listseat.split(",").length
+    var ticketid = 0
+
+
     var ODLT = {
         ticketID: localStorage.getItem("ticketId"),
         tickeType: type,
@@ -236,6 +238,7 @@ function createOrder() {
         },
         success: function (data) {
             // success
+            alert("Create oder successfully")
             window.location.href = "http://127.0.0.1:5500/staff_order_success.html"
 
         },

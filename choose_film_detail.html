@@ -63,26 +63,26 @@
             <div class="col-date-title">
                 <h2>Date</h2>
             </div>
-            <div class="col-date-detail" onclick="chooseday()">
-                <button class="box-date box-date-out-of-date">
+            <div class="col-date-detail">
+                <button class="box-date-out-of-date" disabled>
                     <p>15 Mar</p>
                     <p>TUE</p>
                 </button>
-                <button class="box-date box-date-selected">
-                    <p>15 Mar</p>
-                    <p>TUE</p>
+                <button class="box-date box-date-selected" value="15 Mar, TUE">
+                    <p>17 Mar</p>
+                    <p>WED</p>
                 </button>
-                <button class="box-date">
-                    <p>15 Mar</p>
-                    <p>TUE</p>
+                <button class="box-date" onclick="chooseday()" value="19 Mar, THU">
+                    <p>19 Mar</p>
+                    <p>THU</p>
                 </button>
-                <button class="box-date">
-                    <p>15 Mar</p>
-                    <p>TUE</p>
+                <button class="box-date" onclick="chooseday()" value="20 Mar, FRI">
+                    <p>20 Mar</p>
+                    <p>FRI</p>
                 </button>
-                <button class="box-date">
-                    <p>15 Mar</p>
-                    <p>TUE</p>
+                <button class="box-date" onclick="chooseday()" value="22 Mar, MON">
+                    <p>22 Mar</p>
+                    <p>MON</p>
                 </button>
             </div>
         </div>
@@ -93,21 +93,21 @@
             <div class="col-detail-time-seat-price">
                 <div col="col-seat-type">
                     <h3 class="seat-type-style">REGULAR 2D</h3>
-                    <div class="row-time-movie" onclick="choosetimefor2d()">
-                        <button class="box-time box-time-out-of-date">
-                            12:15
+                    <div class="row-time-movie">
+                        <button class="box-time-out-of-date" disabled>
+                            11:15
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor2d()" value="14:15">
+                            14:15
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor2d()" value="16:15">
+                            16:15
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor2d()" value="17:30">
+                            17:30
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor2d()" value="22:15">
+                            22:15
                         </button>
                     </div>
                 </div>
@@ -116,21 +116,21 @@
                 </div>
                 <div col="col-seat-type">
                     <h3 class="seat-type-style">GOLD CLASS 2D</h3>
-                    <div class="row-time-movie" onclick="choosetimefor3d()">
-                        <button class="box-time">
-                            12:15
+                    <div class="row-time-movie">
+                        <button class="box-time" onclick="choosetimefor3d()" value=" 11:15">
+                            11:15
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor3d()" value=" 14:20">
+                            14:20
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor3d()" value="  19:15">
+                            19:15
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor3d()" value=" 21:30">
+                            21:30
                         </button>
-                        <button class="box-time">
-                            12:15
+                        <button class="box-time" onclick="choosetimefor3d()" value=" 23:15">
+                            23:15
                         </button>
                     </div>
                 </div>
@@ -146,16 +146,19 @@
     </footer>
 </body>
 <script>
+
     $('#cancel').click(function () {
         window.location.replace("staff_create_order_choose_film.html");
     });
     $('.box-date').on('click', function () {
         $('.box-date').removeClass('box-date-selected');
         $(this).addClass('box-date-selected');
+        localStorage.setItem("playdate", $(this).val())
     });
     $('.box-time').on('click', function () {
         $('.box-time').removeClass('box-time-selected');
         $(this).addClass('box-time-selected');
+        localStorage.setItem("playtime", $(this).val())
     });
 </script>
 <script src="js\createOrder.js"></script>

@@ -12,8 +12,8 @@ function fillorderbill() {
 
     }
     var moviename = localStorage.getItem("movieName")
-    var date = "2022-04-04"
-    var time = "11:11"
+    var date = localStorage.getItem("playdate")
+    var time = localStorage.getItem("playtime")
 
     var seats = localStorage.getItem("listseatId")
     var str = ""

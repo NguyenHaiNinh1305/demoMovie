@@ -172,42 +172,45 @@ function chooseday() {
 }
 
 function choosetimefor2d() {
-    localStorage.setItem("price2d", 70000)
+    if (localStorage.getItem("price3d") != undefined) {
+        localStorage.removeItem("price3d")
+        localStorage.setItem("price2d", 70000)
+    } else {
+        localStorage.setItem("price2d", 70000)
+    }
+
 }
 
 function choosetimefor3d() {
-    localStorage.setItem("price3d", 100000)
+    if (localStorage.getItem("price2d") != undefined) {
+        localStorage.removeItem("price2d")
+        localStorage.setItem("price3d", 100000)
+    } else {
+        localStorage.setItem("price3d", 100000)
+    }
 }
+
+
 function nextToStep() {
-    if (localStorage.getItem("datechoosed") == undefined) {
-        alert('Please choose date')
+    if (localStorage.getItem("datechoosed") == undefined && localStorage.getItem("price2d") == undefined && localStorage.getItem("price3d") == undefined) {
+        alert("You've not choose anything")
         localStorage.removeItem("datechoosed")
         localStorage.removeItem("price2d")
         localStorage.removeItem("price3d")
-        return
+
     }
-    else if (localStorage.getItem("price2d") == undefined && localStorage.getItem("price3d") == undefined) {
-        alert("Please choose time for type ticket")
+    else if ((localStorage.getItem("price2d") != undefined || localStorage.getItem("price3d") != undefined) && localStorage.getItem("datechoosed") == undefined) {
+        alert("Please choose date")
         localStorage.removeItem("datechoosed")
+    } else if ((localStorage.getItem("price2d") == undefined && localStorage.getItem("price3d") == undefined) && localStorage.getItem("datechoosed") != undefined) {
+        alert("Please choose time for seats type")
         localStorage.removeItem("price2d")
         localStorage.removeItem("price3d")
     } else {
-        if (localStorage.getItem("price2d") != undefined) {
-            window.location.replace("staff_create_order_choose_seat.html")
-            let price = localStorage.getItem("price2d")
-            localStorage.removeItem("datechoosed")
-            localStorage.removeItem("price3d")
-            return price
-        } else {
-            window.location.replace("staff_create_order_choose_seat.html")
-            localStorage.getItem("price3d")
-            let price = localStorage.getItem("price3d")
-            localStorage.removeItem("datechoosed")
-            localStorage.removeItem("price2d")
-            return price
-        }
+        window.location.replace("staff_create_order_choose_seat.html")
     }
 }
+
 
 
 
