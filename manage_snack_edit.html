@@ -76,6 +76,13 @@
         <button id="cancel">Cancel</button>
         <button id="done" onclick="updateOk()">Done</button>
     </footer>
+    <script>
+        $(document).ready(function () {
+            $("#cancel").click(function () {
+                window.location.replace("manage_snack_list.html");
+            });
+        });
+    </script>
 </body>
 <script src="js\login.js"></script>
 <script src="js/snackList.js"></script>
