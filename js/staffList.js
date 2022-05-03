@@ -134,6 +134,11 @@ function getStaff(id) {
     })
 }
 
+function transtonextPage(id) {
+    $('body').load("manage_staff_account_detail.html")
+    getStaff(id);
+}
+
 function addStaff() {
     var name = document.getElementById("name").value
     var age = document.getElementById("age").value
