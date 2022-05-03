@@ -102,6 +102,28 @@ function addSnack() {
     var price = document.getElementById("price").value;
     var type = document.getElementById("type").value;
 
+    if (name == "" && picture == "" && price == "") {
+        alert("All of the field must not be left blank value")
+        return
+    } else {
+        if (name == "") {
+            alert("Please type name")
+            return
+        }
+        if (picture == "") {
+            alert("Please choose picture")
+            return
+        }
+        if (price == "") {
+            alert("Please type price")
+            return
+        }
+    }
+    const pictureform = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
+    if (!picture.match(pictureform)) {
+        alert("Your picture link is invalid")
+        return
+    }
     var snack = {
         snackname: name,
         picture: picture,
@@ -120,8 +142,7 @@ function addSnack() {
         },
         success: function (result) {
             // success
-            console.log(snack);
-            console.log('success');
+            alert("ok")
             getSnackList();
             window.location.href = "manage_snack_list.html";
         },
@@ -134,12 +155,34 @@ function addSnack() {
 }
 
 function updateSnack(id) {
-    console.log('hello')
     var name = document.getElementById("name").value;
     var picture = document.getElementById("image").value;
     var price = document.getElementById("price").value;
     var type = document.getElementById("type").value;
 
+    if (name == "" && picture == "" && price == "") {
+        alert("All of the field must not be left blank value")
+        return
+    } else {
+        if (name == "") {
+            alert("Please type name")
+            return
+        }
+        if (picture == "") {
+            alert("Please choose picture")
+            return
+        }
+        if (price == "") {
+            alert("Please type price")
+            return
+        }
+    }
+
+    const pictureform = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
+    if (!picture.match(pictureform)) {
+        alert("Your picture link is invalid")
+        return
+    }
     var snack = {
         id: id,
         snackname: name,

@@ -33,7 +33,7 @@
                 <label for="name">User name</label>
                 <input type="text" id="name" size="100" placeholder="Username"><br>
                 <label for="email">Email</label>
-                <input type="email" id="email" size="100" placeholder="Email" pattern='okbb'><br>
+                <input type="email" id="email" size="100" placeholder="Email"><br>
                 <label for="age">age</label>
                 <input type="age" id="age" size="100"><br>
                 <label for="password">Password</label>
@@ -80,7 +80,7 @@
             password: newpassword,
             age: age
         }
-        if (18 <= age <= 65) {
+        if (18 <= age && age <= 65) {
             if (newpassword == confirmpass) {
                 $.ajax({
                     url: 'http://localhost:8080/login/signup',
@@ -93,7 +93,9 @@
 
                     },
                     error(jqXHR) {
-                        alert(jqXHR.status)
+                        if (jqXHR.status == 500) {
+                            alert("Your email address is already in use")
+                        }
 
                     }
                 });

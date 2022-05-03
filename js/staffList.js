@@ -146,6 +146,46 @@ function addStaff() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
+
+    if (name == "" && age == "" && email == "" && password == "") {
+        alert("All of the field must not be left blank value")
+        return
+    } else {
+        if (name == "") {
+            alert("Please type name")
+            return
+        }
+        if (age == "") {
+            alert("Please choose age")
+            return
+        }
+
+        if (email == "") {
+            alert("Please choose email")
+            return
+        }
+        if (password == "") {
+            alert("Please type password")
+            return
+        }
+    }
+    if (18 <= age && age <= 65) {
+
+    } else {
+        alert("Age must be greater than 18 and less then 65 or equal")
+        return
+    }
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!email.match(mailformat)) {
+        alert("incorrect email pattern")
+        return
+    }
+    var passwordformat = /^(?=.*\d).{6,}$/
+    if (!password.match(passwordformat)) {
+        alert("At least 6 characters required")
+        return
+    }
+
     var staff = {
         accountName: name,
         age: age,
@@ -158,7 +198,7 @@ function addStaff() {
         url: 'http://localhost:8080/api/accounts',
         type: 'POST',
         data: JSON.stringify(staff),
-        dataType: 'json',
+
         contentType: "application/json",
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Basic " + btoa(
@@ -174,6 +214,8 @@ function addStaff() {
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
                 window.location.replace("forbidden.html");
+            } else if (jqXHR.status == 500) {
+                alert("your email address is already in use")
             }
         }
     });
@@ -184,6 +226,35 @@ function updateStaff(id) {
     var age = document.getElementById("age").value
     var role = document.getElementById("role").value;
     var email = document.getElementById("email").value;
+    if (name == "" && age == "" && email == "" && password == "") {
+        alert("All of the field must not be left blank value")
+        return
+    } else {
+        if (name == "") {
+            alert("Please type name")
+            return
+        }
+        if (age == "") {
+            alert("Please choose age")
+            return
+        }
+
+        if (email == "") {
+            alert("Please choose email")
+            return
+        }
+
+    }
+    if (18 <= age && age <= 65) {
+
+    } else {
+        alert("Age must be greater than 18 and less then 65 or equal")
+    }
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!email.match(mailformat)) {
+        alert("incorrect email pattern")
+        return
+    }
 
     var staff = {
         id: id,
@@ -213,6 +284,8 @@ function updateStaff(id) {
         error(jqXHR, textStatus, errorThrown) {
             if (jqXHR.status == 403) {
                 window.location.replace("forbidden.html");
+            } else if (jqXHR.status == 500) {
+                alert("your email address is already in use")
             }
         }
     });

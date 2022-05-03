@@ -172,7 +172,7 @@ function addMovie() {
     var poster = document.getElementById("imageposter").value;
     var releaseDate = document.getElementById("running-time").value
     if (title == "" && director == "" && cast == "" && genre == "" && language == "" && rate == "" && starttime == ":00" && endtime == ":00" && poster == "" && releaseDate == "") {
-        alert("Please type content")
+        alert("All of the field must not be left blank value")
         return
     } else {
         if (title == "") {
@@ -217,7 +217,11 @@ function addMovie() {
         }
     }
 
-
+    const pictureform = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
+    if (!poster.match(pictureform)) {
+        alert("Your picture link is invalid")
+        return
+    }
     var movie = {
         name: title,
         director: director,
@@ -268,7 +272,7 @@ function updateMovie(id) {
     var poster = document.getElementById("imageposter").value;
     var releaseDate = document.getElementById("running-time").value
     if (title == "" && director == "" && cast == "" && genre == "" && language == "" && rate == "" && starttime == ":00" && endtime == ":00" && poster == "" && releaseDate == "") {
-        alert("Please type content")
+        alert("All of the field must not be left blank value")
         return
     } else {
         if (title == "") {
@@ -311,6 +315,12 @@ function updateMovie(id) {
             alert("Please type poster")
             return
         }
+    }
+
+    const pictureform = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
+    if (!poster.match(pictureform)) {
+        alert("Your picture link is invalid")
+        return
     }
     var movie = {
         id: id,
