@@ -64,6 +64,16 @@
         var age = document.getElementById('age').value
         var newpassword = document.getElementById('newpassword').value
         var confirmpass = document.getElementById('password').value
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!email.match(mailformat)) {
+            alert("incorrect email pattern")
+            return
+        }
+        var passwordformat = /^(?=.*\d).{6,}$/
+        if (!newpassword.match(passwordformat)) {
+            alert("At least 6 characters required")
+            return
+        }
         var formreg = {
             accountName: accname,
             email: email,

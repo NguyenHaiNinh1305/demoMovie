@@ -169,23 +169,54 @@ function addMovie() {
     var rate = document.getElementById("rate").value;
     var starttime = document.getElementById("start-time").value + ":00";
     var endtime = document.getElementById("end-time").value + ":00";
-    var poster = document.getElementById("imageposter").src;
-    var today = new Date();
-    var month = ''
-    if (((today.getMonth() + 1) + '').length = 1) {
-        month = "0" + (today.getMonth() + 1)
+    var poster = document.getElementById("imageposter").value;
+    var releaseDate = document.getElementById("running-time").value
+    if (title == "" && director == "" && cast == "" && genre == "" && language == "" && rate == "" && starttime == ":00" && endtime == ":00" && poster == "" && releaseDate == "") {
+        alert("Please type content")
+        return
     } else {
-        month = today.getMonth() + 1
+        if (title == "") {
+            alert("Please type title")
+            return
+        }
+        if (releaseDate == "") {
+            alert("Please choose releaseDate")
+            return
+        }
+        if (director == "") {
+            alert("Please type director")
+            return
+        }
+        if (cast == "") {
+            alert("Please type cast")
+            return
+        }
+        if (genre == "") {
+            alert("Please type genre")
+            return
+        }
+        if (language == "") {
+            alert("Please type language")
+            return
+        }
+        if (rate == "") {
+            alert("Please type rate")
+            return
+        }
+        if (starttime == "") {
+            alert("Please choose starttime")
+            return
+        }
+        if (endtime == "") {
+            alert("Please choose endtime")
+            return
+        }
+        if (poster == "") {
+            alert("Please type poster")
+            return
+        }
     }
 
-    var daytoday = ''
-    if ((today.getDate() + '').length = 1) {
-        daytoday = "0" + today.getDate()
-    } else {
-        daytoday = today.getDate()
-    }
-
-    var date = today.getFullYear() + '-' + month + '-' + daytoday;
 
     var movie = {
         name: title,
@@ -197,7 +228,7 @@ function addMovie() {
         durationStart: starttime,
         durationEnd: endtime,
         poster: poster,
-        releaseDate: date
+        releaseDate: releaseDate
     }
 
     $.ajax({
@@ -235,9 +266,52 @@ function updateMovie(id) {
     var starttime = document.getElementById("start-time").value + ":00";
     var endtime = document.getElementById("end-time").value + ":00";
     var poster = document.getElementById("imageposter").value;
-    var today = new Date();
-
-    var date = today.getFullYear() + '-' + "0" + (today.getMonth() + 1) + '-' + today.getDate();
+    var releaseDate = document.getElementById("running-time").value
+    if (title == "" && director == "" && cast == "" && genre == "" && language == "" && rate == "" && starttime == ":00" && endtime == ":00" && poster == "" && releaseDate == "") {
+        alert("Please type content")
+        return
+    } else {
+        if (title == "") {
+            alert("Please type title")
+            return
+        }
+        if (releaseDate == "") {
+            alert("Please choose releaseDate")
+            return
+        }
+        if (director == "") {
+            alert("Please type director")
+            return
+        }
+        if (cast == "") {
+            alert("Please type cast")
+            return
+        }
+        if (genre == "") {
+            alert("Please type genre")
+            return
+        }
+        if (language == "") {
+            alert("Please type language")
+            return
+        }
+        if (rate == "") {
+            alert("Please type rate")
+            return
+        }
+        if (starttime == "") {
+            alert("Please choose starttime")
+            return
+        }
+        if (endtime == "") {
+            alert("Please choose endtime")
+            return
+        }
+        if (poster == "") {
+            alert("Please type poster")
+            return
+        }
+    }
     var movie = {
         id: id,
         name: title,
@@ -249,7 +323,7 @@ function updateMovie(id) {
         durationStart: starttime,
         durationEnd: endtime,
         poster: poster,
-        releaseDate: date
+        releaseDate: releaseDate
     }
 
     $.ajax({
