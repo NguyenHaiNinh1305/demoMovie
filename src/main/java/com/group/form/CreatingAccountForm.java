@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CreatingAccountForm {
+	private int id;
 	
     @NotBlank(message = "must not be null")
     @Length(max = 100)

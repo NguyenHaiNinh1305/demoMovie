@@ -46,9 +46,6 @@ public class Order {
 	@JoinColumn(name = "account_ID", referencedColumnName = "account_ID")
 	private Account account;
 	
-	@OneToOne
-	@JoinColumn(name = "orderline_snack_ID", referencedColumnName = "orderline_snack_ID")
-	private OderlineSnack oderlineSnack;
 	
 	@OneToOne
 	@JoinColumn(name = "orderline_ticket_ID", referencedColumnName = "orderline_ticket_ID")

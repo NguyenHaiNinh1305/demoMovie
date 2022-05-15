@@ -43,10 +43,10 @@ public class OrderService implements IOrderService {
 		// TODO Auto-generated method stub
 		Order order =  repository.findById(id).get();
 		int orderticketid = order.getOrderlineTicket().getId();
-		int odersnackid = order.getOderlineSnack().getId();
+		//int odersnackid = order.getOderlineSnack().getId();
 		repository.delete(order);
 		iOdlTicketService.deleteOrderLineTicket(orderticketid);
-		iOrderLineSnackService.deleteOrderlineSnack(odersnackid);
+		//iOrderLineSnackService.deleteOrderlineSnack(odersnackid);
 	}
 	
 }

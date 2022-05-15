@@ -38,8 +38,8 @@ public class OderlineSnack {
 	@JoinColumn(name = "snack_ID", referencedColumnName = "snack_ID")
 	private Snack snack;
 	
-	@OneToOne(mappedBy = "oderlineSnack")
-	private Order order;
+//	@OneToOne(mappedBy = "oderlineSnack")
+//	private Order order;
 
 	public enum SnackType {
 		middle, big, small;

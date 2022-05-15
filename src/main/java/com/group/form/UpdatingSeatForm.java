@@ -11,5 +11,5 @@ public class UpdatingSeatForm {
 	@NotNull
 	private String seatStatus;
 	@NotNull
-	private int ticket_ID;
+	private int ticketId;
 }

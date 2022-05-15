@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CreatingOrderlineSnackForm {
+	private int id;
 	@NotNull
 	@Positive
 	private int snacknumber;

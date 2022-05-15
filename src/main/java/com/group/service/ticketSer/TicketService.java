@@ -54,12 +54,16 @@ public class TicketService implements ITicketService {
 	@Override
 	public void createTicket(CreatingTicketForm form, List<Integer> seatID) {
 		// TODO Auto-generated method stub
+		List<Ticket> listorderlines = ticketRepository.findAll();
+		int id = listorderlines.get(listorderlines.size()-1).getId();
+		id +=1;
+		form.setId(id);
 		Ticket ticket = modelMapper.map(form, Ticket.class);
 		ticketRepository.save(ticket);
 		for (Integer integer : seatID) {
 			UpdatingSeatForm formS =new UpdatingSeatForm();
 			formS.setSeatStatus("occupied");
-			formS.setTicket_ID(ticket.getId());
+			formS.setTicketId(form.getId());
 			
 			seatService.updateSeat(integer, formS);
 		}

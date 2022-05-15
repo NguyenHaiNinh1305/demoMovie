@@ -1,7 +1,5 @@
 package com.group.controller;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -20,15 +18,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.group.dto.MovieDto;
-import com.group.dto.SeatDto;
+import com.group.dto.OdlTicketDto;
 import com.group.dto.TicketDto;
-import com.group.entity.Movie;
-import com.group.entity.Seat;
+import com.group.entity.OderlineSnack;
+import com.group.entity.OrderlineTicket;
 import com.group.entity.Ticket;
 import com.group.form.CreatingTicketForm;
 import com.group.respository.MovieRepository;
 import com.group.respository.SeatRepository;
+import com.group.respository.TicketRepository;
 import com.group.service.ticketSer.ITicketService;
 
 @RestController
@@ -44,6 +42,8 @@ public class TicketController {
 	@Autowired
 	private SeatRepository seatRepository;
 	@Autowired
+	private TicketRepository repository;
+	@Autowired
 	private ModelMapper modelMapper;
 
 	@GetMapping()
@@ -56,28 +56,17 @@ public class TicketController {
 		return pageTicketDto;
 	}
 
+	
+	
 	@PostMapping(value = "/add")
 	public void createTicket(@RequestBody CreatingTicketForm form,
 			@RequestParam(value = "seatID", required = true) List<Integer> seatID) {
-
-		TypeMap<CreatingTicketForm, Ticket> typeMap = modelMapper.getTypeMap(CreatingTicketForm.class, Ticket.class);
-
-		if (typeMap == null) {
-			modelMapper.addMappings(new PropertyMap<CreatingTicketForm, Ticket>() {
-
-				@Override
-				protected void configure() {
-					skip(destination.getId());
-
-				}
-			});
-
-			iTicketService.createTicket(form, seatID);
-		}
+		
+		iTicketService.createTicket(form, seatID);
 
 	}
-	
-	@DeleteMapping(value  = "/delete")
+
+	@DeleteMapping(value = "/delete")
 	public void deleteTicket(@RequestParam(value = "id") int id) {
 		iTicketService.deleteTicket(id);
 	}

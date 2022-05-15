@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
 public class Ticket {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ticket_ID", nullable = false)
 	private int id;
 	
@@ -49,9 +49,7 @@ public class Ticket {
 	@OneToMany(mappedBy = "ticket")
 	private List<Seat> ListSeats;
 	
-//	@OneToOne(mappedBy = "ticket", orphanRemoval = true)
-//	@PrimaryKeyJoinColumn
+	
 	@OneToOne(mappedBy = "ticket")
-	//@JoinColumn(name = "ticket_ID", referencedColumnName = "orderline_ticket_ID")
 	private OrderlineTicket orderlineTicket;
 }

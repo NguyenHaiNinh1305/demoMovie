@@ -39,10 +39,10 @@ public class Account {
     private short age;
     
     
-    @Column(name = "email", nullable = false, length = 255)
+    @Column(name = "email", nullable = false, length = 255, unique = true)
     private String email;
     
-    @Column(name = "password", nullable = false, length = 100)
+    @Column(name = "password", nullable = false, length = 800)
     private String password;
     
     @OneToMany(mappedBy = "account")

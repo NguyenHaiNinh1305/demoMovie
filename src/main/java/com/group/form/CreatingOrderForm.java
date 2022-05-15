@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreatingOrderForm {
 	
-	
+	private int id;
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@NotNull
 	private Date orderDate;
@@ -31,8 +31,6 @@ public class CreatingOrderForm {
 	private int accountID;
 	
 
-	@NotNull
-	private int oderlineSnackID;
 
 	@NotNull
 	private int orderlineTicketID;

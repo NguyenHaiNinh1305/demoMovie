@@ -3,8 +3,6 @@ package com.group.controller;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
-import org.modelmapper.TypeMap;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,6 +22,7 @@ import com.group.dto.OrderDto;
 import com.group.entity.Account;
 import com.group.entity.Order;
 import com.group.form.CreatingOrderForm;
+import com.group.respository.OrderRepository;
 import com.group.service.AccountSer.IAccountService;
 import com.group.service.OrderSer.IOrderService;
 
@@ -36,6 +35,8 @@ public class OrderController {
 
 	@Autowired
 	private IOrderService service;
+	@Autowired
+	private OrderRepository repository;
 	@Autowired
 	private IAccountService accountService;
 
@@ -51,26 +52,19 @@ public class OrderController {
 		return pageOrderDtos;
 	}
 
+	
+	
 	@PostMapping(value = "/add")
 	public void createOrder(@RequestBody CreatingOrderForm form) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication() ;
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Account account = accountService.getAccountByAccountName(auth.getName());
 		int accountID  = account.getId();
 		form.setAccountID(accountID);
-		TypeMap<CreatingOrderForm, Order> typeMap = modelMapper.getTypeMap(CreatingOrderForm.class,
-				Order.class);
-		if (typeMap == null) {
-			modelMapper.addMappings(new PropertyMap<CreatingOrderForm, Order>() {
-
-				@Override
-				protected void configure() {
-					skip(destination.getId());
-
-				}
-
-			});
-			service.createOrder(form);
-		}
+		List<Order> listorders =  repository.findAll();
+		int id = listorders.get(listorders.size()-1).getId();
+		form.setId(id+1);
+		service.createOrder(form);
+		
 	}
 	
 	@DeleteMapping(value = "delete")

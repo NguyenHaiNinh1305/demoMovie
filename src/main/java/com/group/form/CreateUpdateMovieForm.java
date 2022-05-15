@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CreateUpdateMovieForm {
+	private int id;
 	private String name;
 	private String director;
 

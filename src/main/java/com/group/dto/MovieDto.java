@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class MovieDto {
+	private int id;
 	private String name;
 	
 	
@@ -37,4 +38,6 @@ public class MovieDto {
 	private String language;
 	
 	private String rate;
+	
+	private String poster;
 }

@@ -14,6 +14,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CreatingTicketForm {
+	
+	private int id;
 	private int movieID;
 	 @JsonFormat(pattern = "HH:mm:ss", timezone = "vietnam/hanoi")
 	private Date accomTime;

@@ -22,11 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.group.dto.AccountDto;
 import com.group.dto.OdlTicketDto;
+import com.group.dto.TicketDto;
+import com.group.entity.OderlineSnack;
+import com.group.entity.Order;
 import com.group.entity.OrderlineTicket;
 import com.group.entity.Ticket;
 import com.group.form.CreatingTicketForm;
 import com.group.form.CreatingUpdateOdlTicketForm;
+import com.group.respository.MovieRepository;
 import com.group.respository.OLTRepository;
+import com.group.respository.TicketRepository;
 import com.group.service.OdlTicketSer.IOdlTicketService;
 
 @RestController
@@ -36,6 +41,13 @@ public class OLTController {
 	@Autowired
 	IOdlTicketService iOdlTicketService;
 
+	@Autowired
+	private OLTRepository repository;
+	
+	@Autowired
+	private TicketRepository ticketRepository;
+	
+	
 	@Autowired
 	ModelMapper modelMapper;
 
@@ -48,23 +60,27 @@ public class OLTController {
 		Page<OdlTicketDto> pageOdlTDTO = new PageImpl<>(ListOdlDto, pageable, pageOdlT.getTotalElements());
 		return pageOdlTDTO;
 	}
-	@Transactional
+	
+	@GetMapping(value = "once")
+	public TicketDto getOrderlineTicketsbyId(@RequestParam(value = "id", required =  true) int id) {
+		
+		OrderlineTicket orderlineTicket = repository.getById(id);
+		OdlTicketDto odlTicketDto = modelMapper.map(orderlineTicket, OdlTicketDto.class);
+		Ticket ticket = ticketRepository.getById(odlTicketDto.getTicketID());
+		TicketDto ticketDto = modelMapper.map(ticket, TicketDto.class);
+		
+		
+		return ticketDto;
+	}
 	@PostMapping(value = "/add")
 	public void creatOrderLineTicket(@RequestBody CreatingUpdateOdlTicketForm form) {
-		TypeMap<CreatingUpdateOdlTicketForm, OrderlineTicket> typeMap = modelMapper
-				.getTypeMap(CreatingUpdateOdlTicketForm.class, OrderlineTicket.class);
-
-		if (typeMap == null) {
-			modelMapper.addMappings(new PropertyMap<CreatingUpdateOdlTicketForm, OrderlineTicket>() {
-
-				@Override
-				protected void configure() {
-					skip(destination.getId());
-
-				}
-			});
-			iOdlTicketService.createOrderlineTicket(form);
-		}
+		List<OrderlineTicket>listorderlines =  repository.findAll();
+		int id = listorderlines.get(listorderlines.size()-1).getId();
+		
+			form.setId(id+1);
+		
+		iOdlTicketService.createOrderlineTicket(form);
+		
 	}
 	
 	@DeleteMapping(value = "/delete")

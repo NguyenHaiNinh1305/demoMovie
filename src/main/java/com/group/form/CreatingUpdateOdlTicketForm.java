@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class CreatingUpdateOdlTicketForm {
 	
+	private int id;
 	private int ticketNum;
 
 	private String tickeType;

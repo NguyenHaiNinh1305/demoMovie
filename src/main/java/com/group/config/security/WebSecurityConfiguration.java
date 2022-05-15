@@ -2,6 +2,7 @@ package com.group.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -12,6 +13,7 @@ import com.group.service.AccountSer.IAccountService;
 
 @Component
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)  
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired IAccountService accountService;
 	
@@ -23,11 +25,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		httpSecurity.cors()
 		.and()
 		.authorizeHttpRequests()
-		.antMatchers("/v1/**").hasAnyAuthority("admin")
+		.antMatchers("/login/**").permitAll()
 		.antMatchers("/seats/**").hasAnyAuthority("admin", "staff")
 		.antMatchers("/api/accounts/**").hasAnyAuthority("admin")
-		.antMatchers("/snacks/**").hasAnyAuthority("admin")
-		.antMatchers("/ODLs/**").hasAnyAuthority("admin", "staff")
+		.antMatchers("/ODLs/**").permitAll()
 		.antMatchers("/orderlineSnacks/**").hasAnyAuthority("admin", "staff")
 		.antMatchers("/tickets/**").hasAnyAuthority("admin", "staff")
 		.antMatchers("/orders/**").hasAnyAuthority("admin", "staff")
